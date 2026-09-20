@@ -101,7 +101,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
             "n8n, custom skripty, agent orchestrace",
             "Monitoring, alerty, fallbacky",
           ],
-          priceFrom: "od 12 500 Kč",
+          priceFrom: "od 5 000 Kč",
         },
         {
           title: "Databáze & datové systémy",
@@ -228,7 +228,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
             "n8n, custom scripts, agent orchestration",
             "Monitoring, alerts, fallbacks",
           ],
-          priceFrom: "from €500",
+          priceFrom: "from €200",
         },
         {
           title: "Databases & data systems",
