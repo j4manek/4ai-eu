@@ -41,6 +41,11 @@ export interface Dictionary {
       namePlaceholder: string;
       email: string;
       emailPlaceholder: string;
+      phone: string;
+      phonePlaceholder: string;
+      service: string;
+      servicePlaceholder: string;
+      serviceOther: string;
       message: string;
       messagePlaceholder: string;
       submit: string;
@@ -167,6 +172,11 @@ export const dictionaries: Record<Locale, Dictionary> = {
         namePlaceholder: "Jak ti mám říkat",
         email: "E-mail",
         emailPlaceholder: "ty@firma.cz",
+        phone: "Telefon",
+        phonePlaceholder: "Nepovinné",
+        service: "O jakou službu jde",
+        servicePlaceholder: "Vyber si",
+        serviceOther: "Jiné",
         message: "O čem to je",
         messagePlaceholder: "Popiš stručně, co bys chtěl postavit nebo vyřešit…",
         submit: "Odeslat",
@@ -293,6 +303,11 @@ export const dictionaries: Record<Locale, Dictionary> = {
         namePlaceholder: "What should I call you",
         email: "Email",
         emailPlaceholder: "you@company.com",
+        phone: "Phone",
+        phonePlaceholder: "Optional",
+        service: "Which service is this about",
+        servicePlaceholder: "Choose one",
+        serviceOther: "Other",
         message: "What's this about",
         messagePlaceholder: "Briefly describe what you'd like to build or solve…",
         submit: "Send",

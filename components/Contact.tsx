@@ -76,6 +76,46 @@ export function Contact({ dict }: { dict: Dictionary }) {
               </label>
             </div>
 
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+              <label className="flex flex-col gap-2">
+                <span className="font-mono text-[11px] uppercase tracking-wider text-ink-faint">
+                  {f.phone}
+                </span>
+                <input
+                  name="phone"
+                  type="tel"
+                  placeholder={f.phonePlaceholder}
+                  className="border-b border-line bg-transparent py-2.5 text-ink placeholder:text-ink-faint focus:border-accent focus:outline-none"
+                />
+              </label>
+              <label className="flex flex-col gap-2">
+                <span className="font-mono text-[11px] uppercase tracking-wider text-ink-faint">
+                  {f.service}
+                </span>
+                <div className="relative">
+                  <select
+                    required
+                    name="service"
+                    defaultValue=""
+                    className="w-full appearance-none border-b border-line bg-transparent py-2.5 pr-6 text-ink focus:border-accent focus:outline-none [&>option]:bg-bg-raised"
+                  >
+                    <option value="" disabled>
+                      {f.servicePlaceholder}
+                    </option>
+                    {dict.services.items.map((item) => (
+                      <option key={item.title} value={item.title}>
+                        {item.title}
+                      </option>
+                    ))}
+                    <option value={f.serviceOther}>{f.serviceOther}</option>
+                  </select>
+                  <span className="pointer-events-none absolute right-0 top-1/2 -translate-y-1/2 text-ink-faint">
+                    ▾
+                  </span>
+                </div>
+              </label>
+            </div>
+
             <label className="flex flex-col gap-2">
               <span className="font-mono text-[11px] uppercase tracking-wider text-ink-faint">
                 {f.message}

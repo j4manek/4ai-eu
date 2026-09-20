@@ -7,15 +7,23 @@ export async function POST(request: Request) {
     !body ||
     typeof body.name !== "string" ||
     typeof body.email !== "string" ||
+    typeof body.service !== "string" ||
     typeof body.message !== "string" ||
     !body.name.trim() ||
+    !body.service.trim() ||
     !body.message.trim() ||
     !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(body.email)
   ) {
     return NextResponse.json({ ok: false, error: "invalid_payload" }, { status: 400 });
   }
 
-  const { name, email, message } = body as { name: string; email: string; message: string };
+  const { name, email, message, service } = body as {
+    name: string;
+    email: string;
+    message: string;
+    service: string;
+  };
+  const phone = typeof body.phone === "string" ? body.phone.trim() : "";
 
   const apiKey = process.env.RESEND_API_KEY;
   const to = process.env.CONTACT_EMAIL;
@@ -24,6 +32,8 @@ export async function POST(request: Request) {
     console.log("[contact] no email provider configured — submission logged only:", {
       name,
       email,
+      phone,
+      service,
       message,
     });
     return NextResponse.json({ ok: true, delivered: false });
@@ -39,8 +49,8 @@ export async function POST(request: Request) {
       from: process.env.CONTACT_FROM ?? "4AI <onboarding@resend.dev>",
       to,
       reply_to: email,
-      subject: `Nová poptávka od ${name}`,
-      text: `Jméno: ${name}\nEmail: ${email}\n\n${message}`,
+      subject: `Nová poptávka od ${name} — ${service}`,
+      text: `Jméno: ${name}\nEmail: ${email}\nTelefon: ${phone || "—"}\nSlužba: ${service}\n\n${message}`,
     }),
   });
 
