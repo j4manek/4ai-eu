@@ -29,7 +29,7 @@ export default async function HomePage({
         <Stats dict={dict} />
         <Contact dict={dict} />
       </main>
-      <Footer dict={dict} locale={locale as Locale} />
+      <Footer dict={dict} />
     </>
   );
 }

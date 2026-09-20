@@ -54,11 +54,31 @@ function buildGraph() {
     }
   });
 
-  return { nodes, edges };
+  // long-haul connectors strung between hub nodes — sparse, dramatic, and
+  // long enough for a signal to visibly travel across the whole graph
+  const hubs = nodes.filter((n) => n.hub);
+  const longHauls: Edge[] = [];
+  for (let i = 0; i < hubs.length; i++) {
+    const a = hubs[i];
+    const b = hubs[(i + 1) % hubs.length];
+    if (a === b) continue;
+    const edge = { a, b, d: Math.hypot(a.x - b.x, a.y - b.y) };
+    edges.push(edge);
+    longHauls.push(edge);
+  }
+
+  return { nodes, edges, longHauls };
 }
 
 export function HeroIllustration() {
-  const { nodes, edges } = useMemo(() => buildGraph(), []);
+  const { nodes, edges, longHauls } = useMemo(() => buildGraph(), []);
+  const signals = useMemo(() => {
+    const shortHops = edges
+      .filter((e) => (e.a.hub || e.b.hub) && !longHauls.includes(e))
+      .sort((a, b) => b.d - a.d)
+      .slice(0, 6);
+    return [...longHauls, ...shortHops];
+  }, [edges, longHauls]);
   const ref = useRef<HTMLDivElement>(null);
 
   const mx = useMotionValue(0);
@@ -114,7 +134,7 @@ export function HeroIllustration() {
           </linearGradient>
         </defs>
 
-        <g stroke="url(#edge-fade)" strokeWidth="1">
+        <g stroke="url(#edge-fade)" strokeWidth="1" className="animate-edge-breathe">
           {edges.map((edge, i) => (
             <line
               key={i}
@@ -147,6 +167,29 @@ export function HeroIllustration() {
               style={n.hub ? { animationDelay: `${(i % 5) * 0.6}s` } : undefined}
             />
           ))}
+        </g>
+
+        <g>
+          {signals.map((edge, i) => {
+            // constant travel speed regardless of edge length, so long
+            // connectors don't feel like teleportation
+            const dur = Math.min(6, Math.max(1.6, edge.d / 130));
+            const begin = ((i * 0.7) % dur).toFixed(2);
+            const path = `M${edge.a.x},${edge.a.y} L${edge.b.x},${edge.b.y}`;
+            return (
+              <circle key={`signal-${i}`} r="3" fill="var(--color-accent)" filter="url(#hero-glow)" opacity="0">
+                <animateMotion path={path} dur={`${dur}s`} begin={`${begin}s`} repeatCount="indefinite" />
+                <animate
+                  attributeName="opacity"
+                  values="0;1;1;0"
+                  keyTimes="0;0.1;0.8;1"
+                  dur={`${dur}s`}
+                  begin={`${begin}s`}
+                  repeatCount="indefinite"
+                />
+              </circle>
+            );
+          })}
         </g>
       </motion.svg>
     </div>

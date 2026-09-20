@@ -20,7 +20,6 @@ export function About({ dict }: { dict: Dictionary }) {
               {p}
             </p>
           ))}
-          <p className="mt-2 font-display text-xl italic text-ink">— {dict.about.signature}</p>
         </Reveal>
       </div>
     </section>

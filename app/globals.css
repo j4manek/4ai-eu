@@ -103,6 +103,20 @@ body {
   animation: pulse-glow 4.5s ease-in-out infinite;
 }
 
+@keyframes edge-breathe {
+  0%,
+  100% {
+    opacity: 0.75;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.animate-edge-breathe {
+  animation: edge-breathe 6s ease-in-out infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

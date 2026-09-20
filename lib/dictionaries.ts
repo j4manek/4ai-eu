@@ -30,7 +30,7 @@ export interface Dictionary {
     heading: string;
     items: { title: string; description: string }[];
   };
-  about: { eyebrow: string; heading: string; body: string[]; signature: string };
+  about: { eyebrow: string; heading: string; body: string[] };
   stats: { items: { index: string; title: string; description: string }[] };
   contact: {
     eyebrow: string;
@@ -55,9 +55,9 @@ export interface Dictionary {
 export const dictionaries: Record<Locale, Dictionary> = {
   cs: {
     meta: {
-      title: "4AI — Jony Form",
+      title: "4AI",
       description:
-        "Weby, AI agenti a datové systémy postavené s umělou inteligencí. Osobní studio Jonyho Formánka.",
+        "Weby, AI agenti a datové systémy postavené s umělou inteligencí. Osobní AI-native studio.",
     },
     nav: {
       services: "Služby",
@@ -68,9 +68,9 @@ export const dictionaries: Record<Locale, Dictionary> = {
       status: "Dostupný pro nové projekty",
     },
     hero: {
-      eyebrow: "JONY FORM — STAVÍM S AI",
+      eyebrow: "SOLO STUDIO · AI-NATIVE",
       headline: ["STAVÍM DIGITÁLNÍ", "VĚCI RYCHLEJI,", "NEŽ ČEKÁŠ."],
-      sub: "Weby, AI agenti a datové systémy — postavené ve spolupráci s Claude. Od nápadu k funkčnímu produktu, bez zbytečných meetingů a specifikací na týdny.",
+      sub: "Weby, AI agenti a datové systémy — postavené s AI po ruce, ne s velkým týmem. Od nápadu k funkčnímu produktu, bez zbytečných meetingů a specifikací na týdny.",
       ctaPrimary: "Napiš mi",
       ctaSecondary: "Prohlédnout služby",
       skip: "Přeskočit ↓",
@@ -132,7 +132,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       items: [
         { title: "Rozhovor", description: "Probereme, co řešíš a proč. Bez brief formulářů na tři strany." },
         { title: "Návrh", description: "Do pár dní vidíš první konkrétní směr, ne prázdný dokument." },
-        { title: "Stavba s AI", description: "Claude píše, testuje a refaktoruje se mnou v reálném čase." },
+        { title: "Stavba s AI", description: "AI se mnou píše, testuje a refaktoruje kód v reálném čase." },
         { title: "Iterace", description: "Ukazuju rozpracované věci — nečekáš na velký reveal na konci." },
         { title: "Nasazení", description: "Jde to do provozu hned, jak je to hotové, ne až po tichém schvalování." },
         { title: "Podpora", description: "Po předání to nemizí ze scény — drobné úpravy a dohled dál řeším." },
@@ -142,10 +142,9 @@ export const dictionaries: Record<Locale, Dictionary> = {
       eyebrow: "O MNĚ",
       heading: "„Nejsem agentura. Jsem jeden člověk s AI parťákem.“",
       body: [
-        "Claude se mnou plánuje architekturu, píše kód, hledá chyby a někdy mě i opraví, když jedu špatným směrem. Nepoužívám AI, abych vypadal produktivně — používám ji, protože to funguje.",
+        "AI se mnou plánuje architekturu, píše kód, hledá chyby a někdy mě i opraví, když jedu špatným směrem. Nepoužívám ji, abych vypadal produktivně — používám ji, protože to funguje.",
         "Výsledek? Věci, který by dřív dělal tým lidí týdny, mám hotové za dny — a pořád přesně vím, proč každá část kódu vypadá tak, jak vypadá.",
       ],
-      signature: "Jony Form",
     },
     stats: {
       items: [
@@ -179,9 +178,9 @@ export const dictionaries: Record<Locale, Dictionary> = {
   },
   en: {
     meta: {
-      title: "4AI — Jony Form",
+      title: "4AI",
       description:
-        "Websites, AI agents and data systems built with artificial intelligence. Jony Form's personal studio.",
+        "Websites, AI agents and data systems built with artificial intelligence. A personal AI-native studio.",
     },
     nav: {
       services: "Services",
@@ -192,9 +191,9 @@ export const dictionaries: Record<Locale, Dictionary> = {
       status: "Available for new projects",
     },
     hero: {
-      eyebrow: "JONY FORM — BUILT WITH AI",
+      eyebrow: "SOLO STUDIO · AI-NATIVE",
       headline: ["I BUILD DIGITAL", "THINGS FASTER", "THAN YOU EXPECT."],
-      sub: "Websites, AI agents and data systems — built in collaboration with Claude. From idea to working product, without weeks of meetings and specs.",
+      sub: "Websites, AI agents and data systems — built with AI by my side, not a big team. From idea to working product, without weeks of meetings and specs.",
       ctaPrimary: "Get in touch",
       ctaSecondary: "See what I do",
       skip: "Skip ↓",
@@ -255,7 +254,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       items: [
         { title: "Conversation", description: "We talk through what you're solving and why. No three-page brief forms." },
         { title: "Direction", description: "You see a concrete first direction within days, not an empty document." },
-        { title: "Building with AI", description: "Claude writes, tests, and refactors alongside me in real time." },
+        { title: "Building with AI", description: "AI writes, tests, and refactors code alongside me in real time." },
         { title: "Iteration", description: "I show work in progress — you're not waiting for one big reveal." },
         { title: "Deployment", description: "It ships the moment it's ready, not after silent approval cycles." },
         { title: "Support", description: "I don't disappear after handoff — small fixes and oversight continue." },
@@ -265,10 +264,9 @@ export const dictionaries: Record<Locale, Dictionary> = {
       eyebrow: "ABOUT",
       heading: "“I'm not an agency. I'm one person with an AI partner.”",
       body: [
-        "Claude plans architecture with me, writes code, hunts bugs, and sometimes corrects me when I'm heading the wrong way. I don't use AI to look productive — I use it because it works.",
+        "AI plans architecture with me, writes code, hunts bugs, and sometimes corrects me when I'm heading the wrong way. I don't use it to look productive — I use it because it works.",
         "The result? Things that used to take a team weeks, I have done in days — and I still know exactly why every part of the code looks the way it does.",
       ],
-      signature: "Jony Form",
     },
     stats: {
       items: [
