@@ -1,36 +1,33 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 4AI — osobní web
 
-## Getting Started
+Next.js 16 (App Router, Turbopack) + Tailwind v4 + Framer Motion + GSAP-ready + Lenis smooth scroll.
+Dvojjazyčný (CS/EN) přes `app/[locale]`, obsah v `lib/dictionaries.ts`.
 
-First, run the development server:
+## Vývoj
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm run dev      # http://localhost:3000
+npm run build    # produkční build
+npm run start    # spuštění produkčního buildu
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Kontaktní formulář
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+`app/api/contact/route.ts` bez konfigurace jen loguje odeslané zprávy do konzole (nic se neztratí,
+ale ani nikam neodejde e-mail). Pro reálné odesílání e-mailů nastav v `.env.local`:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+RESEND_API_KEY=...      # z resend.com (free tier)
+CONTACT_EMAIL=ty@...    # kam mají poptávky chodit
+CONTACT_FROM=4AI <onboarding@resend.dev>   # volitelné, odesílací adresa
+```
 
-## Learn More
+## Obsah / copy
 
-To learn more about Next.js, take a look at the following resources:
+Všechny texty (CZ i EN) jsou v `lib/dictionaries.ts` — úpravy nadpisů, popisků služeb atd. se dělají tam,
+ne v komponentách.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Nasazení
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Doporučeno Vercel (free tier, `vercel.com` → import repo → done). Až bude koupená doména `4ai.eu`,
+napojí se v nastavení projektu na Vercelu.
