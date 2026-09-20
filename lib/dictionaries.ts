@@ -69,7 +69,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
     },
     hero: {
       eyebrow: "SOLO STUDIO · AI-NATIVE",
-      headline: ["WEBY, AI AGENTI", "A DATOVÉ SYSTÉMY.", "HOTOVO ZA TÝDNY, NE MĚSÍCE."],
+      headline: ["WEBY, AI AGENTI", "A DATOVÉ SYSTÉMY.", "HOTOVO ZA DNY, NE MĚSÍCE."],
       sub: "Pro firmy a projekty, co potřebují fungující produkt rychle — bez agenturních vrstev mezi tebou a tím, kdo to fakt dělá.",
       ctaPrimary: "Napiš mi",
       skip: "Přeskočit ↓",
@@ -89,7 +89,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
             "Rychlé, responzivní, bez balastu",
             "Nasazení a dlouhodobá údržba",
           ],
-          priceFrom: "od 18 000 Kč",
+          priceFrom: "od 9 000 Kč",
         },
         {
           title: "Automatizace & AI agenti",
@@ -101,7 +101,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
             "n8n, custom skripty, agent orchestrace",
             "Monitoring, alerty, fallbacky",
           ],
-          priceFrom: "od 25 000 Kč",
+          priceFrom: "od 12 500 Kč",
         },
         {
           title: "Databáze & datové systémy",
@@ -113,7 +113,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
             "Datové pipeline a ETL",
             "Reporting a dashboardy",
           ],
-          priceFrom: "od 22 000 Kč",
+          priceFrom: "od 11 000 Kč",
         },
         {
           title: "Konzultace & AI strategie",
@@ -125,7 +125,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
             "Implementační plán",
             "Zaškolení týmu",
           ],
-          priceFrom: "od 2 500 Kč / hod",
+          priceFrom: "od 1 250 Kč / hod",
         },
       ],
       cta: "Poptat",
@@ -196,7 +196,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
     },
     hero: {
       eyebrow: "SOLO STUDIO · AI-NATIVE",
-      headline: ["WEBSITES, AI AGENTS", "AND DATA SYSTEMS.", "SHIPPED IN WEEKS, NOT MONTHS."],
+      headline: ["WEBSITES, AI AGENTS", "AND DATA SYSTEMS.", "SHIPPED IN DAYS, NOT MONTHS."],
       sub: "For companies and projects that need a working product fast — no agency layers between you and the person actually building it.",
       ctaPrimary: "Get in touch",
       skip: "Skip ↓",
@@ -216,7 +216,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
             "Fast, responsive, no bloat",
             "Deployment and long-term upkeep",
           ],
-          priceFrom: "from €750",
+          priceFrom: "from €375",
         },
         {
           title: "Automation & AI agents",
@@ -228,7 +228,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
             "n8n, custom scripts, agent orchestration",
             "Monitoring, alerts, fallbacks",
           ],
-          priceFrom: "from €1,000",
+          priceFrom: "from €500",
         },
         {
           title: "Databases & data systems",
@@ -239,7 +239,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
             "Data pipelines and ETL",
             "Reporting and dashboards",
           ],
-          priceFrom: "from €900",
+          priceFrom: "from €450",
         },
         {
           title: "Consulting & AI strategy",
@@ -251,7 +251,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
             "Implementation roadmap",
             "Team onboarding",
           ],
-          priceFrom: "from €100/hr",
+          priceFrom: "from €50/hr",
         },
       ],
       cta: "Get in touch",
