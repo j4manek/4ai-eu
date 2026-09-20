@@ -60,19 +60,13 @@ export function Hero({ dict }: { dict: Dictionary }) {
           {dict.hero.sub}
         </motion.p>
 
-        <motion.div variants={fade} className="mt-9 flex flex-wrap items-center gap-4">
+        <motion.div variants={fade} className="mt-9">
           <a
             href="#contact"
-            className="group inline-flex items-center gap-2 rounded-full bg-ink px-6 py-3.5 font-mono text-[12px] uppercase tracking-wider text-bg transition-transform hover:scale-105"
+            className="group inline-flex items-center gap-2 rounded-full bg-ink px-7 py-4 font-mono text-[12px] uppercase tracking-wider text-bg transition-transform hover:scale-105"
           >
             {dict.hero.ctaPrimary}
             <span className="transition-transform group-hover:translate-x-1">→</span>
-          </a>
-          <a
-            href="#services"
-            className="inline-flex items-center gap-2 rounded-full border border-line px-6 py-3.5 font-mono text-[12px] uppercase tracking-wider text-ink-dim transition-colors hover:border-line-strong hover:text-ink"
-          >
-            {dict.hero.ctaSecondary}
           </a>
         </motion.div>
       </motion.div>

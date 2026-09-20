@@ -16,13 +16,13 @@ export interface Dictionary {
     headline: string[];
     sub: string;
     ctaPrimary: string;
-    ctaSecondary: string;
     skip: string;
   };
   services: {
     eyebrow: string;
     heading: string;
-    items: { title: string; description: string; points: string[] }[];
+    priceNote: string;
+    items: { title: string; description: string; points: string[]; priceFrom: string }[];
     cta: string;
   };
   process: {
@@ -69,15 +69,15 @@ export const dictionaries: Record<Locale, Dictionary> = {
     },
     hero: {
       eyebrow: "SOLO STUDIO · AI-NATIVE",
-      headline: ["STAVÍM DIGITÁLNÍ", "VĚCI RYCHLEJI,", "NEŽ ČEKÁŠ."],
-      sub: "Weby, AI agenti a datové systémy — postavené s AI po ruce, ne s velkým týmem. Od nápadu k funkčnímu produktu, bez zbytečných meetingů a specifikací na týdny.",
+      headline: ["WEBY, AI AGENTI", "A DATOVÉ SYSTÉMY.", "HOTOVO ZA TÝDNY, NE MĚSÍCE."],
+      sub: "Pro firmy a projekty, co potřebují fungující produkt rychle — bez agenturních vrstev mezi tebou a tím, kdo to fakt dělá.",
       ctaPrimary: "Napiš mi",
-      ctaSecondary: "Prohlédnout služby",
       skip: "Přeskočit ↓",
     },
     services: {
       eyebrow: "CO DĚLÁM",
       heading: "Čtyři věci, ve kterých jsem dobrý",
+      priceNote: "Orientační ceny. Přesnou částku dostaneš po krátkém, nezávazném rozhovoru.",
       items: [
         {
           title: "Weby & digitální produkty",
@@ -89,6 +89,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
             "Rychlé, responzivní, bez balastu",
             "Nasazení a dlouhodobá údržba",
           ],
+          priceFrom: "od 18 000 Kč",
         },
         {
           title: "Automatizace & AI agenti",
@@ -100,6 +101,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
             "n8n, custom skripty, agent orchestrace",
             "Monitoring, alerty, fallbacky",
           ],
+          priceFrom: "od 25 000 Kč",
         },
         {
           title: "Databáze & datové systémy",
@@ -111,6 +113,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
             "Datové pipeline a ETL",
             "Reporting a dashboardy",
           ],
+          priceFrom: "od 22 000 Kč",
         },
         {
           title: "Konzultace & AI strategie",
@@ -122,6 +125,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
             "Implementační plán",
             "Zaškolení týmu",
           ],
+          priceFrom: "od 2 500 Kč / hod",
         },
       ],
       cta: "Poptat",
@@ -192,15 +196,15 @@ export const dictionaries: Record<Locale, Dictionary> = {
     },
     hero: {
       eyebrow: "SOLO STUDIO · AI-NATIVE",
-      headline: ["I BUILD DIGITAL", "THINGS FASTER", "THAN YOU EXPECT."],
-      sub: "Websites, AI agents and data systems — built with AI by my side, not a big team. From idea to working product, without weeks of meetings and specs.",
+      headline: ["WEBSITES, AI AGENTS", "AND DATA SYSTEMS.", "SHIPPED IN WEEKS, NOT MONTHS."],
+      sub: "For companies and projects that need a working product fast — no agency layers between you and the person actually building it.",
       ctaPrimary: "Get in touch",
-      ctaSecondary: "See what I do",
       skip: "Skip ↓",
     },
     services: {
       eyebrow: "WHAT I DO",
       heading: "Four things I'm good at",
+      priceNote: "Ballpark pricing. You'll get an exact number after a short, no-obligation call.",
       items: [
         {
           title: "Websites & digital products",
@@ -212,6 +216,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
             "Fast, responsive, no bloat",
             "Deployment and long-term upkeep",
           ],
+          priceFrom: "from €750",
         },
         {
           title: "Automation & AI agents",
@@ -223,6 +228,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
             "n8n, custom scripts, agent orchestration",
             "Monitoring, alerts, fallbacks",
           ],
+          priceFrom: "from €1,000",
         },
         {
           title: "Databases & data systems",
@@ -233,6 +239,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
             "Data pipelines and ETL",
             "Reporting and dashboards",
           ],
+          priceFrom: "from €900",
         },
         {
           title: "Consulting & AI strategy",
@@ -244,6 +251,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
             "Implementation roadmap",
             "Team onboarding",
           ],
+          priceFrom: "from €100/hr",
         },
       ],
       cta: "Get in touch",

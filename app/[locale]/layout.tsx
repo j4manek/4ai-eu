@@ -1,9 +1,12 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { notFound } from "next/navigation";
 import { display, body, mono } from "../fonts";
 import "../globals.css";
 import { locales, getDictionary, type Locale } from "@/lib/dictionaries";
 import { SmoothScroll } from "@/components/SmoothScroll";
+
+const GA_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -38,6 +41,17 @@ export default async function LocaleLayout({
       <body className="bg-bg font-sans text-ink">
         <div className="grain" />
         <SmoothScroll>{children}</SmoothScroll>
+        {GA_ID && (
+          <>
+            <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} strategy="afterInteractive" />
+            <Script id="ga4-init" strategy="afterInteractive">
+              {`window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', '${GA_ID}');`}
+            </Script>
+          </>
+        )}
       </body>
     </html>
   );

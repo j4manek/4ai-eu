@@ -12,15 +12,21 @@ export function Services({ dict }: { dict: Dictionary }) {
           <h2 className="mt-4 max-w-2xl font-display text-4xl font-semibold leading-[1.05] tracking-tight sm:text-5xl">
             {dict.services.heading}
           </h2>
+          <p className="mt-4 text-sm text-ink-faint">{dict.services.priceNote}</p>
         </Reveal>
 
         <div className="mt-16 grid grid-cols-1 gap-px overflow-hidden rounded-2xl bg-line md:grid-cols-2">
           {dict.services.items.map((item, i) => (
             <Reveal key={item.title} delay={i * 0.08} className="group bg-bg p-8 lg:p-10">
               <div className="flex h-full flex-col">
-                <span className="font-mono text-xs text-ink-faint">
-                  0{i + 1}
-                </span>
+                <div className="flex items-center justify-between">
+                  <span className="font-mono text-xs text-ink-faint">
+                    0{i + 1}
+                  </span>
+                  <span className="rounded-full border border-line px-2.5 py-1 font-mono text-[11px] uppercase tracking-wide text-accent">
+                    {item.priceFrom}
+                  </span>
+                </div>
                 <h3 className="mt-4 font-display text-2xl font-semibold tracking-tight">
                   {item.title}
                 </h3>

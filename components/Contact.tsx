@@ -3,6 +3,7 @@
 import { useState, type FormEvent } from "react";
 import type { Dictionary } from "@/lib/dictionaries";
 import { Reveal } from "./Reveal";
+import { trackAdsConversion, trackEvent } from "@/lib/analytics";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
@@ -25,6 +26,8 @@ export function Contact({ dict }: { dict: Dictionary }) {
       });
       if (!res.ok) throw new Error("request failed");
       setStatus("success");
+      trackEvent("generate_lead", { method: "contact_form" });
+      trackAdsConversion();
       form.reset();
     } catch {
       setStatus("error");
