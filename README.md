@@ -47,5 +47,15 @@ ne v komponentách.
 
 ## Nasazení
 
-Doporučeno Vercel (free tier, `vercel.com` → import repo → done). Až bude koupená doména `4ai.eu`,
-napojí se v nastavení projektu na Vercelu.
+**GitHub Pages (náhled/demo)** — `.github/workflows/deploy-pages.yml` builduje statický export při
+každém pushi do `main` a nasazuje ho na `https://<user>.github.io/4ai-eu/`. Statický export nepodporuje
+API routy ani proxy (Next.js to při `output: "export"` neumí), takže na tomhle demu:
+- kontaktní formulář se neodešle nikam (workflow `app/api` před buildem smaže) — pro reálné demo je to OK,
+  poptávky odsud nečekej
+- jazykový redirect na `/` (proxy.ts) neběží — místo toho je v `public/index.html` prostý meta-refresh na `/cs/`
+
+Přepínání jazyka tlačítkem v navigaci funguje normálně (to je čistě client-side).
+
+**Vercel (produkce)** — doporučeno pro reálný provoz (free tier, `vercel.com` → import repo → done).
+Vercel bere normální (ne-export) build, takže tam funguje kontaktní formulář i automatická detekce
+jazyka podle prohlížeče. Až bude koupená doména `4ai.eu`, napojí se v nastavení projektu na Vercelu.
