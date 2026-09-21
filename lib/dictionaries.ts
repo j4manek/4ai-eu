@@ -55,7 +55,13 @@ export interface Dictionary {
       error: string;
     };
   };
-  footer: { tagline: string; rights: string };
+  footer: { tagline: string; rights: string; email: string; privacyLink: string };
+  privacy: {
+    title: string;
+    updated: string;
+    intro: string;
+    sections: { heading: string; body: string[] }[];
+  };
 }
 
 export const dictionaries: Record<Locale, Dictionary> = {
@@ -190,6 +196,59 @@ export const dictionaries: Record<Locale, Dictionary> = {
     footer: {
       tagline: "Weby, automatizace a data — postavené s AI.",
       rights: "Všechna práva vyhrazena.",
+      email: "jony.form@seznam.cz",
+      privacyLink: "Zásady ochrany osobních údajů",
+    },
+    privacy: {
+      title: "Zásady ochrany osobních údajů",
+      updated: "Poslední aktualizace: 21. 9. 2026",
+      intro:
+        "Tyto zásady popisují, jak 4AI (Jonáš Formánek) zpracovává osobní údaje návštěvníků webu, kteří vyplní kontaktní formulář.",
+      sections: [
+        {
+          heading: "1. Správce osobních údajů",
+          body: [
+            "Jonáš Formánek, IČO: (doplním)",
+            "Kontaktní e-mail: jony.form@seznam.cz",
+          ],
+        },
+        {
+          heading: "2. Jaké údaje zpracovávám",
+          body: [
+            "Jméno, e-mail, telefon (nepovinné), vybraná služba a text zprávy — tedy jen to, co sám/sama vyplníš v kontaktním formuláři.",
+          ],
+        },
+        {
+          heading: "3. Účel a právní základ zpracování",
+          body: [
+            "Údaje zpracovávám za účelem vyřízení tvé poptávky a navazující komunikace. Právním základem je oprávněný zájem reagovat na dotaz (čl. 6 odst. 1 písm. f) GDPR), případně plnění smlouvy, pokud z poptávky vznikne spolupráce (čl. 6 odst. 1 písm. b) GDPR).",
+          ],
+        },
+        {
+          heading: "4. Doba uchování",
+          body: [
+            "Údaje z poptávky uchovávám po dobu nezbytnou k jejímu vyřízení a případné navazující komunikaci, nejdéle 2 roky od posledního kontaktu, poté je mažu.",
+          ],
+        },
+        {
+          heading: "5. Předávání třetím stranám",
+          body: [
+            "Formulář odesílá zprávu přes službu FormSubmit.co, která funguje jako technický zpracovatel doručující e-mail do mé schránky. Jiným třetím stranám údaje nepředávám a neprodávám.",
+          ],
+        },
+        {
+          heading: "6. Cookies",
+          body: [
+            "Web aktuálně nepoužívá žádné analytické ani marketingové cookies. Jediný ukládaný údaj je technická (nezbytná) cookie „locale“, která si pamatuje zvolený jazyk stránky — ta ke svému nastavení nevyžaduje souhlas.",
+          ],
+        },
+        {
+          heading: "7. Tvá práva",
+          body: [
+            "Máš právo na přístup ke svým údajům, jejich opravu, výmaz, omezení zpracování, přenositelnost a právo vznést námitku. Kdykoliv mě můžeš kontaktovat na jony.form@seznam.cz. Pokud máš pocit, že se zpracováním údajů nakládám v rozporu se zákonem, máš právo podat stížnost u Úřadu pro ochranu osobních údajů (uoou.cz).",
+          ],
+        },
+      ],
     },
   },
   en: {
@@ -322,6 +381,59 @@ export const dictionaries: Record<Locale, Dictionary> = {
     footer: {
       tagline: "Websites, automation and data — built with AI.",
       rights: "All rights reserved.",
+      email: "jony.form@seznam.cz",
+      privacyLink: "Privacy Policy",
+    },
+    privacy: {
+      title: "Privacy Policy",
+      updated: "Last updated: Sep 21, 2026",
+      intro:
+        "This policy describes how 4AI (Jonáš Formánek) processes the personal data of visitors who submit the contact form.",
+      sections: [
+        {
+          heading: "1. Data controller",
+          body: [
+            "Jonáš Formánek, Company ID (IČO): (to be added)",
+            "Contact email: jony.form@seznam.cz",
+          ],
+        },
+        {
+          heading: "2. What data I process",
+          body: [
+            "Name, email, phone (optional), the selected service, and your message — only what you enter into the contact form yourself.",
+          ],
+        },
+        {
+          heading: "3. Purpose and legal basis",
+          body: [
+            "I process this data to handle your inquiry and any follow-up communication. The legal basis is legitimate interest in responding to your request (GDPR Art. 6(1)(f)), or performance of a contract if the inquiry turns into a collaboration (GDPR Art. 6(1)(b)).",
+          ],
+        },
+        {
+          heading: "4. Retention period",
+          body: [
+            "I keep inquiry data for as long as needed to handle it and any follow-up, for a maximum of 2 years from the last contact, after which it is deleted.",
+          ],
+        },
+        {
+          heading: "5. Third parties",
+          body: [
+            "The form is delivered via FormSubmit.co, which acts as a technical processor forwarding the message to my inbox. I do not share or sell your data to any other third party.",
+          ],
+        },
+        {
+          heading: "6. Cookies",
+          body: [
+            "The site currently uses no analytics or marketing cookies. The only stored value is a strictly necessary \"locale\" cookie that remembers your chosen language — it does not require consent.",
+          ],
+        },
+        {
+          heading: "7. Your rights",
+          body: [
+            "You have the right to access, correct, erase, restrict, or port your data, and to object to its processing. Reach out any time at jony.form@seznam.cz. If you believe your data has been processed unlawfully, you may file a complaint with the Czech Office for Personal Data Protection (uoou.cz).",
+          ],
+        },
+      ],
     },
   },
 };
