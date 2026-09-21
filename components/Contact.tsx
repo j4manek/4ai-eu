@@ -18,11 +18,21 @@ export function Contact({ dict }: { dict: Dictionary }) {
     const form = e.currentTarget;
     const data = Object.fromEntries(new FormData(form).entries());
 
+    // GitHub Pages is a static export — there is no server to run /api/contact,
+    // so that build routes submissions through FormSubmit.co instead (set via
+    // NEXT_PUBLIC_CONTACT_FORM_EMAIL). Any other deploy (Vercel, `next start`)
+    // keeps using the local Resend-backed API route.
+    const formsubmitEmail = process.env.NEXT_PUBLIC_CONTACT_FORM_EMAIL;
+    const endpoint =
+      process.env.NEXT_PUBLIC_GITHUB_PAGES === "true" && formsubmitEmail
+        ? `https://formsubmit.co/ajax/${formsubmitEmail}`
+        : "/api/contact";
+
     try {
-      const res = await fetch("/api/contact", {
+      const res = await fetch(endpoint, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({ ...data, _subject: `Nová poptávka od ${data.name} — ${data.service}` }),
       });
       if (!res.ok) throw new Error("request failed");
       setStatus("success");
@@ -49,6 +59,14 @@ export function Contact({ dict }: { dict: Dictionary }) {
 
         <Reveal delay={0.1}>
           <form onSubmit={handleSubmit} className="flex flex-col gap-6">
+            <input
+              type="text"
+              name="_honey"
+              tabIndex={-1}
+              autoComplete="off"
+              className="hidden"
+              aria-hidden
+            />
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
               <label className="flex flex-col gap-2">
                 <span className="font-mono text-[11px] uppercase tracking-wider text-ink-faint">

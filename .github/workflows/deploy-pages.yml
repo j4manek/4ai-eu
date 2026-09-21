@@ -34,6 +34,14 @@ jobs:
       - run: npm run build
         env:
           GITHUB_PAGES: "true"
+          NEXT_PUBLIC_GITHUB_PAGES: "true"
+          # Set a "Repository variable" named CONTACT_FORM_EMAIL (Settings → Secrets
+          # and variables → Actions → Variables) to the inbox that should receive
+          # contact-form submissions. FormSubmit.co sends a one-time confirmation
+          # link to that address the first time it's used — click it once to
+          # activate delivery. Without this variable the form has no working
+          # backend on GitHub Pages and submissions will fail.
+          NEXT_PUBLIC_CONTACT_FORM_EMAIL: ${{ vars.CONTACT_FORM_EMAIL }}
 
       - uses: actions/upload-pages-artifact@v3
         with:
