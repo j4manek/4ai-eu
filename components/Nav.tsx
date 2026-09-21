@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Dictionary, Locale } from "@/lib/dictionaries";
 import { LangSwitch } from "./LangSwitch";
+import { MobileNav } from "./MobileNav";
 
 export function Nav({ dict, locale }: { dict: Dictionary; locale: Locale }) {
   return (
@@ -43,6 +44,7 @@ export function Nav({ dict, locale }: { dict: Dictionary; locale: Locale }) {
           >
             {dict.nav.cta} →
           </a>
+          <MobileNav dict={dict} />
         </div>
       </div>
     </header>

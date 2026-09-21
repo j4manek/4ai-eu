@@ -10,6 +10,7 @@ export interface Dictionary {
     contact: string;
     cta: string;
     status: string;
+    menu: string;
   };
   hero: {
     eyebrow: string;
@@ -71,6 +72,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       contact: "Kontakt",
       cta: "Napiš mi",
       status: "Dostupný pro nové projekty",
+      menu: "Menu",
     },
     hero: {
       eyebrow: "SOLO STUDIO · AI-NATIVE",
@@ -203,6 +205,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       contact: "Contact",
       cta: "Get in touch",
       status: "Available for new projects",
+      menu: "Menu",
     },
     hero: {
       eyebrow: "SOLO STUDIO · AI-NATIVE",
