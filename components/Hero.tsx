@@ -25,7 +25,7 @@ const fade = {
 
 export function Hero({ dict }: { dict: Dictionary }) {
   return (
-    <section className="relative flex min-h-[100svh] items-center overflow-hidden pt-24">
+    <section className="relative flex min-h-[100svh] flex-col overflow-hidden pt-24 pb-16">
       <HeroIllustration />
 
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-bg from-35% via-bg/85 via-48% to-transparent" />
@@ -34,8 +34,9 @@ export function Hero({ dict }: { dict: Dictionary }) {
         variants={container}
         initial="hidden"
         animate="visible"
-        className="relative z-10 mx-auto w-full max-w-[1400px] px-6 lg:px-12"
+        className="relative z-10 mx-auto flex w-full max-w-[1400px] flex-1 items-center px-6 lg:px-12"
       >
+        <div>
         <motion.p
           variants={fade}
           className="mb-5 font-mono text-[11px] uppercase tracking-[0.2em] text-accent"
@@ -69,6 +70,7 @@ export function Hero({ dict }: { dict: Dictionary }) {
             <span className="transition-transform group-hover:translate-x-1">→</span>
           </a>
         </motion.div>
+        </div>
       </motion.div>
 
       <motion.a
@@ -77,7 +79,7 @@ export function Hero({ dict }: { dict: Dictionary }) {
         initial="hidden"
         animate="visible"
         transition={{ delay: 0.9 }}
-        className="absolute bottom-8 left-6 z-10 font-mono text-[11px] uppercase tracking-wider text-ink-faint lg:left-12"
+        className="relative z-10 mt-8 px-6 font-mono text-[11px] uppercase tracking-wider text-ink-faint lg:px-12"
       >
         {dict.hero.skip}
       </motion.a>
