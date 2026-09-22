@@ -120,6 +120,23 @@ body {
   animation: edge-breathe 6s ease-in-out infinite;
 }
 
+@keyframes radar-ping {
+  0% {
+    transform: scale(0.6);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(3.2);
+    opacity: 0;
+  }
+}
+
+.animate-radar-ping {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: radar-ping 2.8s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
