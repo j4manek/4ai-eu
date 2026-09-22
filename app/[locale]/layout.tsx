@@ -5,6 +5,7 @@ import { display, body, mono } from "../fonts";
 import "../globals.css";
 import { locales, getDictionary, type Locale } from "@/lib/dictionaries";
 import { SmoothScroll } from "@/components/SmoothScroll";
+import { PageBackground } from "@/components/PageBackground";
 
 const GA_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
 
@@ -40,7 +41,10 @@ export default async function LocaleLayout({
     <html lang={locale} className={`${display.variable} ${body.variable} ${mono.variable}`}>
       <body className="bg-bg font-sans text-ink">
         <div className="grain" />
-        <SmoothScroll>{children}</SmoothScroll>
+        <PageBackground />
+        <div className="relative z-10">
+          <SmoothScroll>{children}</SmoothScroll>
+        </div>
         {GA_ID && (
           <>
             <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} strategy="afterInteractive" />

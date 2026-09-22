@@ -1,24 +1,11 @@
 "use client";
 
 import { ReactLenis } from "lenis/react";
-import { useSyncExternalStore, type ReactNode } from "react";
-
-function subscribe(callback: () => void) {
-  const query = window.matchMedia("(prefers-reduced-motion: reduce)");
-  query.addEventListener("change", callback);
-  return () => query.removeEventListener("change", callback);
-}
-
-function getSnapshot() {
-  return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-}
-
-function getServerSnapshot() {
-  return false;
-}
+import type { ReactNode } from "react";
+import { useReducedMotion } from "@/lib/hooks";
 
 export function SmoothScroll({ children }: { children: ReactNode }) {
-  const reduceMotion = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
+  const reduceMotion = useReducedMotion();
 
   if (reduceMotion) return children;
 
