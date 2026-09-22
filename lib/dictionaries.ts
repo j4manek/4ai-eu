@@ -35,7 +35,7 @@ export interface Dictionary {
   currentWork: {
     eyebrow: string;
     heading: string;
-    projects: { status: string; title: string; description: string }[];
+    projects: { status: string; title: string; description: string; image?: string; imageAlt?: string }[];
   };
   about: { eyebrow: string; heading: string; body: string[] };
   stats: { items: { index: string; title: string; description: string }[] };
@@ -179,6 +179,8 @@ export const dictionaries: Record<Locale, Dictionary> = {
           title: "Registr SVJ — 2 837 domů, 9 měst",
           description:
             "Databáze společenství vlastníků jednotek napříč Královéhradeckým a Pardubickým krajem, postavená z dat ARES (oficiální rejstřík) a doplněná cíleným dohledáváním. Nešlo o jedno stažení — každý nález prošel druhým, nezávislým zdrojem, než se vzal za ověřený. Výstup je živý filtrovatelný přehled, ne tabulka, co za měsíc zastará.",
+          image: "svj-registry.jpg",
+          imageAlt: "Ukázka registru SVJ — osobní údaje anonymizované",
         },
       ],
     },
@@ -385,6 +387,8 @@ export const dictionaries: Record<Locale, Dictionary> = {
           title: "Homeowner-association registry — 2,837 buildings, 9 towns",
           description:
             "A database of homeowner-association boards across two Czech regions, built from the official business registry (ARES) and filled in with targeted lookups. Not a one-shot scrape — every match got checked against a second, independent source before it counted as verified. The output is a live, filterable registry, not a spreadsheet that's stale in a month.",
+          image: "svj-registry.jpg",
+          imageAlt: "Registry preview — personal data anonymized",
         },
       ],
     },

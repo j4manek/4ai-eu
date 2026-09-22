@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { Dictionary } from "@/lib/dictionaries";
 import { Reveal } from "./Reveal";
 
@@ -23,7 +24,7 @@ export function CurrentWork({ dict }: { dict: Dictionary }) {
               <Reveal
                 key={project.title}
                 delay={0.1 + i * 0.08}
-                className="rounded-2xl border border-line p-8 lg:p-10"
+                className="flex flex-col rounded-2xl border border-line p-8 lg:p-10"
               >
                 <div className="flex flex-wrap items-center gap-3">
                   <span
@@ -38,6 +39,19 @@ export function CurrentWork({ dict }: { dict: Dictionary }) {
                   </h3>
                 </div>
                 <p className="mt-4 text-ink-dim">{project.description}</p>
+
+                {project.image && (
+                  <div className="mt-6 overflow-hidden rounded-lg border border-line">
+                    <Image
+                      src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/showcase/${project.image}`}
+                      alt={project.imageAlt ?? project.title}
+                      width={1440}
+                      height={720}
+                      className="w-full"
+                      unoptimized
+                    />
+                  </div>
+                )}
               </Reveal>
             );
           })}
