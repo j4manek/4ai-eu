@@ -35,8 +35,7 @@ export interface Dictionary {
   currentWork: {
     eyebrow: string;
     heading: string;
-    status: string;
-    project: { title: string; description: string };
+    projects: { status: string; title: string; description: string }[];
   };
   about: { eyebrow: string; heading: string; body: string[] };
   stats: { items: { index: string; title: string; description: string }[] };
@@ -166,14 +165,22 @@ export const dictionaries: Record<Locale, Dictionary> = {
       caption: "Tohle vidíš přímo teď — žádný mockup, žádný Figma odkaz. Živá stránka, co si právě prohlížíš.",
     },
     currentWork: {
-      eyebrow: "PRÁVĚ TEĎ",
-      heading: "Na čem dělám tuhle chvíli",
-      status: "Ve vývoji",
-      project: {
-        title: "E-mail → cenová nabídka, automaticky",
-        description:
-          "Firma dostává poptávky do e-mailu a nabídku pokaždé dělá někdo jiný, jinak. Stavím systém, co poptávku přečte, dohledá ceny ve starém ERP (Helios Red — bez moderního API, takže je to reálná práce s legacy databází, ne hezké demo) a připraví draft nabídky s přirážkou. Člověk ho vždycky zkontroluje — automaticky se nikam neodesílá.",
-      },
+      eyebrow: "PROJEKTY",
+      heading: "Konkrétní práce, ne jen sliby",
+      projects: [
+        {
+          status: "Ve vývoji",
+          title: "E-mail → cenová nabídka, automaticky",
+          description:
+            "Firma dostává poptávky do e-mailu a nabídku pokaždé dělá někdo jiný, jinak. Stavím systém, co poptávku přečte, dohledá ceny ve starém ERP (Helios Red — bez moderního API, takže je to reálná práce s legacy databází, ne hezké demo) a připraví draft nabídky s přirážkou. Člověk ho vždycky zkontroluje — automaticky se nikam neodesílá.",
+        },
+        {
+          status: "Hotovo",
+          title: "Registr SVJ — 2 837 domů, 9 měst",
+          description:
+            "Databáze společenství vlastníků jednotek napříč Královéhradeckým a Pardubickým krajem, postavená z dat ARES (oficiální rejstřík) a doplněná cíleným dohledáváním. Nešlo o jedno stažení — každý nález prošel druhým, nezávislým zdrojem, než se vzal za ověřený. Výstup je živý filtrovatelný přehled, ne tabulka, co za měsíc zastará.",
+        },
+      ],
     },
     about: {
       eyebrow: "O MNĚ",
@@ -364,14 +371,22 @@ export const dictionaries: Record<Locale, Dictionary> = {
       caption: "This is what you're looking at right now — no mockup, no Figma link. A live site you're browsing this second.",
     },
     currentWork: {
-      eyebrow: "RIGHT NOW",
-      heading: "What I'm building this week",
-      status: "In progress",
-      project: {
-        title: "Email → price quote, automatically",
-        description:
-          "A company gets requests by email, and every quote gets put together differently by whoever's free. I'm building a system that reads the request, looks up prices in an old ERP (Helios Red — no modern API, so this is real legacy-database work, not a pretty demo), and drafts a quote with the right markup. A human always checks it before it goes out — it never sends itself.",
-      },
+      eyebrow: "PROJECTS",
+      heading: "Real work, not just promises",
+      projects: [
+        {
+          status: "In progress",
+          title: "Email → price quote, automatically",
+          description:
+            "A company gets requests by email, and every quote gets put together differently by whoever's free. I'm building a system that reads the request, looks up prices in an old ERP (Helios Red — no modern API, so this is real legacy-database work, not a pretty demo), and drafts a quote with the right markup. A human always checks it before it goes out — it never sends itself.",
+        },
+        {
+          status: "Shipped",
+          title: "Homeowner-association registry — 2,837 buildings, 9 towns",
+          description:
+            "A database of homeowner-association boards across two Czech regions, built from the official business registry (ARES) and filled in with targeted lookups. Not a one-shot scrape — every match got checked against a second, independent source before it counted as verified. The output is a live, filterable registry, not a spreadsheet that's stale in a month.",
+        },
+      ],
     },
     about: {
       eyebrow: "ABOUT",
