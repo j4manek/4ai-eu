@@ -11,7 +11,10 @@ const nextConfig: NextConfig = isGithubPagesBuild
       basePath: `/${repoName}`,
       trailingSlash: true,
       images: { unoptimized: true },
+      // next/image's basePath prefixing is skipped when unoptimized, so
+      // components that reference /public assets read this to prefix manually.
+      env: { NEXT_PUBLIC_BASE_PATH: `/${repoName}` },
     }
-  : {};
+  : { env: { NEXT_PUBLIC_BASE_PATH: "" } };
 
 export default nextConfig;

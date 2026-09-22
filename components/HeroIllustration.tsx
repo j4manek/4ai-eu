@@ -6,6 +6,9 @@ import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 const WIDTH = 760;
 const HEIGHT = 920;
 
+const COLS = [230, 350, 470, 590, 700];
+const ROWS = [70, 190, 310, 430, 550, 670, 790];
+
 function mulberry32(seed: number) {
   let a = seed;
   return function random() {
@@ -17,68 +20,86 @@ function mulberry32(seed: number) {
   };
 }
 
-type Node = { x: number; y: number; r: number; hub: boolean };
-type Edge = { a: Node; b: Node; d: number };
+type Point = { x: number; y: number };
+type Route = { color: "accent" | "warm"; points: Point[] };
 
-function buildGraph() {
-  const rand = mulberry32(9137);
-  const nodes: Node[] = [];
-  const count = 52;
+// grid coordinates in [col, row] pairs, resolved against COLS/ROWS below
+const ROUTE_DEFS: { color: Route["color"]; stops: [number, number][] }[] = [
+  {
+    color: "accent",
+    stops: [
+      [0, 1],
+      [0, 3],
+      [2, 3],
+      [2, 5],
+      [4, 5],
+    ],
+  },
+  {
+    color: "warm",
+    stops: [
+      [1, 0],
+      [1, 2],
+      [3, 2],
+      [3, 4],
+      [4, 4],
+    ],
+  },
+  {
+    color: "warm",
+    stops: [
+      [0, 4],
+      [0, 6],
+      [2, 6],
+    ],
+  },
+];
 
-  for (let i = 0; i < count; i++) {
-    // bias density toward the vertical centerline, fade at extremes
-    const t = rand();
-    const x = 170 + Math.pow(t, 0.9) * (WIDTH - 230);
-    const y = 40 + rand() * (HEIGHT - 80);
-    const hub = i % 10 === 0;
-    nodes.push({ x, y, r: hub ? 5.5 : 1.6 + rand() * 1.8, hub });
-  }
+function buildCircuit() {
+  const rand = mulberry32(7402);
 
-  const edges: Edge[] = [];
-  const seen = new Set<string>();
+  const grid: (Point | null)[][] = COLS.map((x) =>
+    ROWS.map((y) => (rand() < 0.66 ? { x, y } : null))
+  );
 
-  nodes.forEach((n, i) => {
-    const distances = nodes
-      .map((m, j) => ({ j, d: Math.hypot(n.x - m.x, n.y - m.y) }))
-      .filter((e) => e.j !== i)
-      .sort((a, b) => a.d - b.d);
-
-    const linkCount = n.hub ? 3 : 1;
-    for (let k = 0; k < linkCount; k++) {
-      const target = distances[k];
-      if (!target || target.d > 220) continue;
-      const key = [i, target.j].sort((x, y) => x - y).join("-");
-      if (seen.has(key)) continue;
-      seen.add(key);
-      edges.push({ a: n, b: nodes[target.j], d: target.d });
-    }
+  const meshEdges: [Point, Point][] = [];
+  ROWS.forEach((_, ri) => {
+    let prev: Point | null = null;
+    COLS.forEach((_, ci) => {
+      const n = grid[ci][ri];
+      if (n) {
+        if (prev) meshEdges.push([prev, n]);
+        prev = n;
+      }
+    });
+  });
+  COLS.forEach((_, ci) => {
+    let prev: Point | null = null;
+    ROWS.forEach((_, ri) => {
+      const n = grid[ci][ri];
+      if (n) {
+        if (prev) meshEdges.push([prev, n]);
+        prev = n;
+      }
+    });
   });
 
-  // long-haul connectors strung between hub nodes — sparse, dramatic, and
-  // long enough for a signal to visibly travel across the whole graph
-  const hubs = nodes.filter((n) => n.hub);
-  const longHauls: Edge[] = [];
-  for (let i = 0; i < hubs.length; i++) {
-    const a = hubs[i];
-    const b = hubs[(i + 1) % hubs.length];
-    if (a === b) continue;
-    const edge = { a, b, d: Math.hypot(a.x - b.x, a.y - b.y) };
-    edges.push(edge);
-    longHauls.push(edge);
-  }
+  const meshNodes = grid.flat().filter((n): n is Point => n !== null);
 
-  return { nodes, edges, longHauls };
+  const routes: Route[] = ROUTE_DEFS.map((r) => ({
+    color: r.color,
+    points: r.stops.map(([ci, ri]) => ({ x: COLS[ci], y: ROWS[ri] })),
+  }));
+
+  return { meshNodes, meshEdges, routes };
+}
+
+function pathFor(points: Point[]) {
+  return points.map((p, i) => `${i === 0 ? "M" : "L"}${p.x},${p.y}`).join(" ");
 }
 
 export function HeroIllustration() {
-  const { nodes, edges, longHauls } = useMemo(() => buildGraph(), []);
-  const signals = useMemo(() => {
-    const shortHops = edges
-      .filter((e) => (e.a.hub || e.b.hub) && !longHauls.includes(e))
-      .sort((a, b) => b.d - a.d)
-      .slice(0, 6);
-    return [...longHauls, ...shortHops];
-  }, [edges, longHauls]);
+  const { meshNodes, meshEdges, routes } = useMemo(() => buildCircuit(), []);
   const ref = useRef<HTMLDivElement>(null);
 
   const mx = useMotionValue(0);
@@ -127,70 +148,65 @@ export function HeroIllustration() {
               <feMergeNode in="SourceGraphic" />
             </feMerge>
           </filter>
-          <linearGradient id="edge-fade" x1="0" y1="0" x2="1" y2="0">
-            <stop offset="0%" stopColor="var(--color-ink)" stopOpacity="0" />
-            <stop offset="18%" stopColor="var(--color-ink)" stopOpacity="0.35" />
-            <stop offset="100%" stopColor="var(--color-ink)" stopOpacity="0.5" />
-          </linearGradient>
         </defs>
 
-        <g stroke="url(#edge-fade)" strokeWidth="1" className="animate-edge-breathe">
-          {edges.map((edge, i) => (
-            <line
-              key={i}
-              x1={edge.a.x}
-              y1={edge.a.y}
-              x2={edge.b.x}
-              y2={edge.b.y}
-              pathLength={1}
-              strokeDasharray={1}
-              strokeDashoffset={1}
-              style={{
-                animation: `dash 1.4s ease-out forwards`,
-                animationDelay: `${0.15 + (i % 24) * 0.045}s`,
-              }}
-            />
+        {/* quiet circuit-board mesh, backdrop texture */}
+        <g stroke="var(--color-ink)" strokeOpacity="0.22" strokeWidth="1" className="animate-edge-breathe">
+          {meshEdges.map(([a, b], i) => (
+            <line key={i} x1={a.x} y1={a.y} x2={b.x} y2={b.y} />
+          ))}
+        </g>
+        <g fill="var(--color-ink)" fillOpacity="0.45">
+          {meshNodes.map((n, i) => (
+            <circle key={i} cx={n.x} cy={n.y} r="1.8" />
           ))}
         </g>
 
-        <g>
-          {nodes.map((n, i) => (
-            <circle
-              key={i}
-              cx={n.x}
-              cy={n.y}
-              r={n.r}
-              fill={n.hub ? "var(--color-accent)" : "var(--color-ink)"}
-              fillOpacity={n.hub ? 1 : 0.55}
-              filter={n.hub ? "url(#hero-glow)" : undefined}
-              className={n.hub ? "animate-pulse-glow" : undefined}
-              style={n.hub ? { animationDelay: `${(i % 5) * 0.6}s` } : undefined}
-            />
-          ))}
-        </g>
-
-        <g>
-          {signals.map((edge, i) => {
-            // constant travel speed regardless of edge length, so long
-            // connectors don't feel like teleportation
-            const dur = Math.min(6, Math.max(1.6, edge.d / 130));
-            const begin = ((i * 0.7) % dur).toFixed(2);
-            const path = `M${edge.a.x},${edge.a.y} L${edge.b.x},${edge.b.y}`;
-            return (
-              <circle key={`signal-${i}`} r="3" fill="var(--color-accent)" filter="url(#hero-glow)" opacity="0">
-                <animateMotion path={path} dur={`${dur}s`} begin={`${begin}s`} repeatCount="indefinite" />
+        {/* bold pipeline routes — the automation metaphor */}
+        {routes.map((route, i) => {
+          const color = route.color === "warm" ? "var(--color-accent-warm)" : "var(--color-accent)";
+          const d = pathFor(route.points);
+          return (
+            <g key={i}>
+              <path
+                d={d}
+                fill="none"
+                stroke={color}
+                strokeOpacity="0.4"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                pathLength={1}
+                strokeDasharray={1}
+                strokeDashoffset={1}
+                style={{ animation: "dash 1.6s ease-out forwards", animationDelay: `${0.2 + i * 0.15}s` }}
+              />
+              {route.points.map((p, j) => (
+                <circle
+                  key={j}
+                  cx={p.x}
+                  cy={p.y}
+                  r="4"
+                  fill={color}
+                  filter="url(#hero-glow)"
+                  className="animate-pulse-glow"
+                  style={{ animationDelay: `${(i * 3 + j) * 0.5}s` }}
+                />
+              ))}
+              <circle r="3" fill={color} filter="url(#hero-glow)" opacity="0">
+                <animateMotion path={d} dur="5s" begin={`${i * 1.1}s`} repeatCount="indefinite" />
                 <animate
                   attributeName="opacity"
                   values="0;1;1;0"
-                  keyTimes="0;0.1;0.8;1"
-                  dur={`${dur}s`}
-                  begin={`${begin}s`}
+                  keyTimes="0;0.08;0.92;1"
+                  dur="5s"
+                  begin={`${i * 1.1}s`}
                   repeatCount="indefinite"
                 />
               </circle>
-            );
-          })}
-        </g>
+            </g>
+          );
+        })}
       </motion.svg>
     </div>
   );

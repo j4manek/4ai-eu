@@ -2,8 +2,10 @@ import { notFound } from "next/navigation";
 import { locales, getDictionary, type Locale } from "@/lib/dictionaries";
 import { Nav } from "@/components/Nav";
 import { Hero } from "@/components/Hero";
+import { FeaturedWork } from "@/components/FeaturedWork";
 import { Services } from "@/components/Services";
 import { Process } from "@/components/Process";
+import { CurrentWork } from "@/components/CurrentWork";
 import { About } from "@/components/About";
 import { Stats } from "@/components/Stats";
 import { Contact } from "@/components/Contact";
@@ -23,8 +25,10 @@ export default async function HomePage({
       <Nav dict={dict} locale={locale as Locale} />
       <main>
         <Hero dict={dict} />
+        <FeaturedWork dict={dict} />
         <Services dict={dict} />
         <Process dict={dict} />
+        <CurrentWork dict={dict} />
         <About dict={dict} />
         <Stats dict={dict} />
         <Contact dict={dict} />

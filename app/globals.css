@@ -1,15 +1,17 @@
 @import "tailwindcss";
 
 :root {
-  --color-bg: #050506;
-  --color-bg-raised: #0b0b0d;
+  --color-bg: #17171a;
+  --color-bg-raised: #202024;
   --color-ink: #f3f2ee;
-  --color-ink-dim: #97969e;
-  --color-ink-faint: #55545c;
-  --color-line: rgba(243, 242, 238, 0.1);
-  --color-line-strong: rgba(243, 242, 238, 0.22);
+  --color-ink-dim: #a3a2aa;
+  --color-ink-faint: #6c6b73;
+  --color-line: rgba(243, 242, 238, 0.12);
+  --color-line-strong: rgba(243, 242, 238, 0.24);
   --color-accent: #55e0ff;
   --color-accent-soft: rgba(85, 224, 255, 0.14);
+  --color-accent-warm: #ff9d5c;
+  --color-accent-warm-soft: rgba(255, 157, 92, 0.16);
   --color-signal: #c8ff5c;
 
   --font-display: "Bricolage Grotesque", "Bricolage_Grotesque", sans-serif;
@@ -25,6 +27,7 @@
   --color-ink-faint: var(--color-ink-faint);
   --color-line: var(--color-line);
   --color-accent: var(--color-accent);
+  --color-accent-warm: var(--color-accent-warm);
   --color-signal: var(--color-signal);
 
   --font-sans: var(--font-body);

@@ -31,6 +31,13 @@ export interface Dictionary {
     heading: string;
     items: { title: string; description: string }[];
   };
+  featuredWork: { caption: string };
+  currentWork: {
+    eyebrow: string;
+    heading: string;
+    status: string;
+    project: { title: string; description: string };
+  };
   about: { eyebrow: string; heading: string; body: string[] };
   stats: { items: { index: string; title: string; description: string }[] };
   contact: {
@@ -154,6 +161,19 @@ export const dictionaries: Record<Locale, Dictionary> = {
         { title: "Nasazení", description: "Jde to do provozu hned, jak je to hotové, ne až po tichém schvalování." },
         { title: "Podpora", description: "Po předání to nemizí ze scény — drobné úpravy a dohled dál řeším." },
       ],
+    },
+    featuredWork: {
+      caption: "Tohle vidíš přímo teď — žádný mockup, žádný Figma odkaz. Živá stránka, co si právě prohlížíš.",
+    },
+    currentWork: {
+      eyebrow: "PRÁVĚ TEĎ",
+      heading: "Na čem dělám tuhle chvíli",
+      status: "Ve vývoji",
+      project: {
+        title: "E-mail → cenová nabídka, automaticky",
+        description:
+          "Firma dostává poptávky do e-mailu a nabídku pokaždé dělá někdo jiný, jinak. Stavím systém, co poptávku přečte, dohledá ceny ve starém ERP (Helios Red — bez moderního API, takže je to reálná práce s legacy databází, ne hezké demo) a připraví draft nabídky s přirážkou. Člověk ho vždycky zkontroluje — automaticky se nikam neodesílá.",
+      },
     },
     about: {
       eyebrow: "O MNĚ",
@@ -339,6 +359,19 @@ export const dictionaries: Record<Locale, Dictionary> = {
         { title: "Deployment", description: "It ships the moment it's ready, not after silent approval cycles." },
         { title: "Support", description: "I don't disappear after handoff — small fixes and oversight continue." },
       ],
+    },
+    featuredWork: {
+      caption: "This is what you're looking at right now — no mockup, no Figma link. A live site you're browsing this second.",
+    },
+    currentWork: {
+      eyebrow: "RIGHT NOW",
+      heading: "What I'm building this week",
+      status: "In progress",
+      project: {
+        title: "Email → price quote, automatically",
+        description:
+          "A company gets requests by email, and every quote gets put together differently by whoever's free. I'm building a system that reads the request, looks up prices in an old ERP (Helios Red — no modern API, so this is real legacy-database work, not a pretty demo), and drafts a quote with the right markup. A human always checks it before it goes out — it never sends itself.",
+      },
     },
     about: {
       eyebrow: "ABOUT",
