@@ -1,4 +1,4 @@
-# 4AI — osobní web
+# 4manek AI — osobní web
 
 Next.js 16 (App Router, Turbopack) + Tailwind v4 + Framer Motion + GSAP-ready + Lenis smooth scroll.
 Dvojjazyčný (CS/EN) přes `app/[locale]`, obsah v `lib/dictionaries.ts`.
@@ -58,4 +58,4 @@ Přepínání jazyka tlačítkem v navigaci funguje normálně (to je čistě cl
 
 **Vercel (produkce)** — doporučeno pro reálný provoz (free tier, `vercel.com` → import repo → done).
 Vercel bere normální (ne-export) build, takže tam funguje kontaktní formulář i automatická detekce
-jazyka podle prohlížeče. Až bude koupená doména `4ai.eu`, napojí se v nastavení projektu na Vercelu.
+jazyka podle prohlížeče. Doména `4ai.eu` je už obsazená (ověřeno 2026-10-28), doporučená je `4manek.cz`; po koupi se napojí v nastavení projektu na Vercelu.

@@ -71,17 +71,6 @@ body {
   border: 2px solid var(--color-bg);
 }
 
-/* film grain overlay, fixed, non-interactive */
-.grain {
-  position: fixed;
-  inset: 0;
-  z-index: 60;
-  pointer-events: none;
-  opacity: 0.035;
-  mix-blend-mode: overlay;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-}
-
 .text-balance {
   text-wrap: balance;
 }
@@ -135,6 +124,37 @@ body {
   transform-box: fill-box;
   transform-origin: center;
   animation: radar-ping 2.8s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+@keyframes flow-x {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(200%);
+  }
+}
+
+.animate-flow-x {
+  animation: flow-x 1.3s linear infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+.text-shimmer {
+  background-image: linear-gradient(90deg, var(--color-ink) 0%, var(--color-accent) 25%, var(--color-accent-warm) 50%, var(--color-accent) 75%, var(--color-ink) 100%);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shimmer 6s linear infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {

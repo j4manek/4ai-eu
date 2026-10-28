@@ -1,15 +1,16 @@
 import type { Dictionary, Locale } from "@/lib/dictionaries";
+import { Brand } from "./Brand";
 
 export function Footer({ dict, locale }: { dict: Dictionary; locale: Locale }) {
   return (
     <footer className="border-t border-line py-10">
       <div className="mx-auto flex max-w-[1400px] flex-col items-start justify-between gap-4 px-6 sm:flex-row sm:items-center lg:px-12">
         <div>
-          <p className="font-display text-base font-semibold tracking-tight">4AI</p>
+          <Brand className="font-display text-base font-semibold tracking-tight" />
           <p className="mt-1 text-sm text-ink-faint">{dict.footer.tagline}</p>
           <a
             href={`mailto:${dict.footer.email}`}
-            className="mt-2 inline-block text-sm text-ink-dim transition-colors hover:text-ink"
+            className="mt-1 inline-block py-2 text-sm text-ink-dim transition-colors hover:text-ink"
           >
             {dict.footer.email}
           </a>
@@ -17,12 +18,12 @@ export function Footer({ dict, locale }: { dict: Dictionary; locale: Locale }) {
         <div className="flex flex-col items-start gap-2 sm:items-end">
           <a
             href={`/${locale}/privacy/`}
-            className="font-mono text-[11px] uppercase tracking-wider text-ink-faint transition-colors hover:text-ink"
+            className="py-2 font-mono text-[11px] uppercase tracking-wider text-ink-faint transition-colors hover:text-ink"
           >
             {dict.footer.privacyLink}
           </a>
           <p className="font-mono text-[11px] uppercase tracking-wider text-ink-faint">
-            © {new Date().getFullYear()} 4AI — {dict.footer.rights}
+            © {new Date().getFullYear()} 4manek AI – {dict.footer.rights}
           </p>
         </div>
       </div>

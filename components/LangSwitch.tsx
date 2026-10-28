@@ -24,7 +24,7 @@ export function LangSwitch({ locale }: { locale: Locale }) {
         <button
           key={l}
           onClick={() => switchTo(l)}
-          className={`rounded-full px-2.5 py-1 uppercase transition-colors ${
+          className={`inline-flex min-h-10 items-center rounded-full px-3.5 uppercase transition-colors ${
             l === locale ? "bg-ink text-bg" : "text-ink-dim hover:text-ink"
           }`}
           aria-current={l === locale}

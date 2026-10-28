@@ -5,35 +5,37 @@ export async function POST(request: Request) {
 
   if (
     !body ||
-    typeof body.name !== "string" ||
+    typeof body.company !== "string" ||
     typeof body.email !== "string" ||
-    typeof body.service !== "string" ||
+    typeof body.phone !== "string" ||
+    typeof body.revenue !== "string" ||
     typeof body.message !== "string" ||
-    !body.name.trim() ||
-    !body.service.trim() ||
+    !body.company.trim() ||
+    !body.phone.trim() ||
+    !body.revenue.trim() ||
     !body.message.trim() ||
     !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(body.email)
   ) {
     return NextResponse.json({ ok: false, error: "invalid_payload" }, { status: 400 });
   }
 
-  const { name, email, message, service } = body as {
-    name: string;
+  const { company, email, phone, revenue, message } = body as {
+    company: string;
+    revenue: string;
     email: string;
+    phone: string;
     message: string;
-    service: string;
   };
-  const phone = typeof body.phone === "string" ? body.phone.trim() : "";
 
   const apiKey = process.env.RESEND_API_KEY;
   const to = process.env.CONTACT_EMAIL;
 
   if (!apiKey || !to) {
     console.log("[contact] no email provider configured — submission logged only:", {
-      name,
+      company,
       email,
       phone,
-      service,
+      revenue,
       message,
     });
     return NextResponse.json({ ok: true, delivered: false });
@@ -46,11 +48,11 @@ export async function POST(request: Request) {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      from: process.env.CONTACT_FROM ?? "4AI <onboarding@resend.dev>",
+      from: process.env.CONTACT_FROM ?? "4manek AI <onboarding@resend.dev>",
       to,
       reply_to: email,
-      subject: `Nová poptávka od ${name} — ${service}`,
-      text: `Jméno: ${name}\nEmail: ${email}\nTelefon: ${phone || "—"}\nSlužba: ${service}\n\n${message}`,
+      subject: `Nová poptávka od ${company}`,
+      text: `Firma: ${company}\nEmail: ${email}\nTelefon: ${phone}\nObrat: ${revenue}\n\n${message}`,
     }),
   });
 

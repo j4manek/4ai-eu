@@ -1,13 +1,19 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import Script from "next/script";
 import { notFound } from "next/navigation";
 import { display, body, mono } from "../fonts";
 import "../globals.css";
 import { locales, getDictionary, type Locale } from "@/lib/dictionaries";
 import { SmoothScroll } from "@/components/SmoothScroll";
-import { PageBackground } from "@/components/PageBackground";
 
 const GA_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+  themeColor: "#17171a",
+};
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -40,8 +46,6 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} className={`${display.variable} ${body.variable} ${mono.variable}`}>
       <body className="bg-bg font-sans text-ink">
-        <div className="grain" />
-        <PageBackground />
         <div className="relative z-10">
           <SmoothScroll>{children}</SmoothScroll>
         </div>

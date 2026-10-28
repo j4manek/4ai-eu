@@ -1,13 +1,13 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
-import type { Dictionary } from "@/lib/dictionaries";
+import type { Dictionary, Locale } from "@/lib/dictionaries";
 import { Reveal } from "./Reveal";
 import { trackAdsConversion, trackEvent } from "@/lib/analytics";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
-export function Contact({ dict }: { dict: Dictionary }) {
+export function Contact({ dict, locale }: { dict: Dictionary; locale: Locale }) {
   const [status, setStatus] = useState<Status>("idle");
   const f = dict.contact.form;
 
@@ -32,7 +32,7 @@ export function Contact({ dict }: { dict: Dictionary }) {
       const res = await fetch(endpoint, {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify({ ...data, _subject: `Nová poptávka od ${data.name} — ${data.service}` }),
+        body: JSON.stringify({ ...data, _subject: `Nová poptávka od ${data.company}` }),
       });
       if (!res.ok) throw new Error("request failed");
       setStatus("success");
@@ -45,7 +45,7 @@ export function Contact({ dict }: { dict: Dictionary }) {
   }
 
   return (
-    <section id="contact" className="border-t border-line py-28 lg:py-36">
+    <section id="contact" className="border-t border-line py-16 sm:py-24 lg:py-32">
       <div className="mx-auto grid max-w-[1400px] grid-cols-1 gap-12 px-6 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20 lg:px-12">
         <Reveal>
           <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-accent">
@@ -55,6 +55,14 @@ export function Contact({ dict }: { dict: Dictionary }) {
             {dict.contact.heading}
           </h2>
           <p className="mt-5 max-w-sm text-ink-dim">{dict.contact.sub}</p>
+          <ul className="mt-8 flex flex-col gap-3">
+            {dict.contact.assurances.map((a) => (
+              <li key={a} className="flex items-start gap-3 text-sm text-ink-dim">
+                <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-signal" />
+                {a}
+              </li>
+            ))}
+          </ul>
         </Reveal>
 
         <Reveal delay={0.1}>
@@ -70,16 +78,45 @@ export function Contact({ dict }: { dict: Dictionary }) {
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
               <label className="flex flex-col gap-2">
                 <span className="font-mono text-[11px] uppercase tracking-wider text-ink-faint">
-                  {f.name}
+                  {f.company}
                 </span>
                 <input
                   required
-                  name="name"
+                  name="company"
                   type="text"
-                  placeholder={f.namePlaceholder}
+                  autoComplete="organization"
+                  placeholder={f.companyPlaceholder}
                   className="border-b border-line bg-transparent py-2.5 text-ink placeholder:text-ink-faint focus:border-accent focus:outline-none"
                 />
               </label>
+              <label className="flex flex-col gap-2">
+                <span className="font-mono text-[11px] uppercase tracking-wider text-ink-faint">
+                  {f.revenue}
+                </span>
+                <div className="relative">
+                  <select
+                    required
+                    name="revenue"
+                    defaultValue=""
+                    className="w-full appearance-none border-b border-line bg-transparent py-2.5 pr-6 text-ink focus:border-accent focus:outline-none [&>option]:bg-bg-raised"
+                  >
+                    <option value="" disabled>
+                      {f.revenuePlaceholder}
+                    </option>
+                    {f.revenueOptions.map((o) => (
+                      <option key={o} value={o}>
+                        {o}
+                      </option>
+                    ))}
+                  </select>
+                  <span aria-hidden className="pointer-events-none absolute right-0 top-1/2 -translate-y-1/2 text-ink-faint">
+                    ▾
+                  </span>
+                </div>
+              </label>
+            </div>
+
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
               <label className="flex flex-col gap-2">
                 <span className="font-mono text-[11px] uppercase tracking-wider text-ink-faint">
                   {f.email}
@@ -88,49 +125,23 @@ export function Contact({ dict }: { dict: Dictionary }) {
                   required
                   name="email"
                   type="email"
+                  autoComplete="email"
                   placeholder={f.emailPlaceholder}
                   className="border-b border-line bg-transparent py-2.5 text-ink placeholder:text-ink-faint focus:border-accent focus:outline-none"
                 />
               </label>
-            </div>
-
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
               <label className="flex flex-col gap-2">
                 <span className="font-mono text-[11px] uppercase tracking-wider text-ink-faint">
                   {f.phone}
                 </span>
                 <input
+                  required
                   name="phone"
                   type="tel"
+                  autoComplete="tel"
                   placeholder={f.phonePlaceholder}
                   className="border-b border-line bg-transparent py-2.5 text-ink placeholder:text-ink-faint focus:border-accent focus:outline-none"
                 />
-              </label>
-              <label className="flex flex-col gap-2">
-                <span className="font-mono text-[11px] uppercase tracking-wider text-ink-faint">
-                  {f.service}
-                </span>
-                <div className="relative">
-                  <select
-                    required
-                    name="service"
-                    defaultValue=""
-                    className="w-full appearance-none border-b border-line bg-transparent py-2.5 pr-6 text-ink focus:border-accent focus:outline-none [&>option]:bg-bg-raised"
-                  >
-                    <option value="" disabled>
-                      {f.servicePlaceholder}
-                    </option>
-                    {dict.services.items.map((item) => (
-                      <option key={item.title} value={item.title}>
-                        {item.title}
-                      </option>
-                    ))}
-                    <option value={f.serviceOther}>{f.serviceOther}</option>
-                  </select>
-                  <span className="pointer-events-none absolute right-0 top-1/2 -translate-y-1/2 text-ink-faint">
-                    ▾
-                  </span>
-                </div>
               </label>
             </div>
 
@@ -141,27 +152,35 @@ export function Contact({ dict }: { dict: Dictionary }) {
               <textarea
                 required
                 name="message"
-                rows={4}
+                rows={5}
                 placeholder={f.messagePlaceholder}
                 className="resize-none border-b border-line bg-transparent py-2.5 text-ink placeholder:text-ink-faint focus:border-accent focus:outline-none"
               />
             </label>
 
-            <div className="flex items-center gap-5 pt-2">
+            <p className="text-xs text-ink-faint">
+              {f.consent}{" "}
+              <a href={`/${locale}/privacy/`} className="underline underline-offset-2 hover:text-ink">
+                {f.consentLink}
+              </a>
+              .
+            </p>
+
+            <div className="flex flex-wrap items-center gap-5 pt-1">
               <button
                 type="submit"
                 disabled={status === "submitting"}
-                className="inline-flex items-center gap-2 rounded-full bg-ink px-6 py-3.5 font-mono text-[12px] uppercase tracking-wider text-bg transition-transform hover:scale-105 disabled:opacity-60"
+                className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-ink px-6 py-4 font-mono text-[12px] uppercase tracking-wider text-bg transition-transform hover:scale-105 disabled:opacity-60 sm:w-auto sm:py-3.5"
               >
                 {status === "submitting" ? f.submitting : f.submit}
                 {status !== "submitting" && <span>→</span>}
               </button>
 
               {status === "success" && (
-                <p className="font-mono text-[12px] text-signal">{f.success}</p>
+                <p role="status" className="font-mono text-[12px] text-signal">{f.success}</p>
               )}
               {status === "error" && (
-                <p className="font-mono text-[12px] text-accent">{f.error}</p>
+                <p role="alert" className="font-mono text-[12px] text-accent">{f.error}</p>
               )}
             </div>
           </form>

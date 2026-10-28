@@ -1,7 +1,7 @@
 import type { Dictionary } from "@/lib/dictionaries";
 import { Reveal } from "./Reveal";
 
-const icons = [
+const allIcons = [
   // conversation
   <path key="1" d="M4 5h16v11H9l-5 4V5Z" />,
   // direction / compass
@@ -9,7 +9,7 @@ const icons = [
     <circle key="c" cx="12" cy="12" r="8.5" />
     <path key="2" d="m15 9-4.2 2.8L9 16l4.2-2.8L15 9Z" />
   </>,
-  // build with AI / chip
+  // implementation / chip
   <>
     <rect key="r" x="7" y="7" width="10" height="10" rx="1.5" />
     <path key="3" d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5 5l2 2M19 5l-2 2M5 19l2-2M19 19l-2-2" />
@@ -22,9 +22,11 @@ const icons = [
   <path key="6" d="M12 21s-7-4.35-7-10a4.2 4.2 0 0 1 7-3.1A4.2 4.2 0 0 1 19 11c0 5.65-7 10-7 10Z" />,
 ];
 
+const icons = [allIcons[0], allIcons[1], allIcons[2], allIcons[4]];
+
 export function Process({ dict }: { dict: Dictionary }) {
   return (
-    <section id="process" className="border-t border-line py-28 lg:py-36">
+    <section id="process" className="border-t border-line py-16 sm:py-24 lg:py-32">
       <div className="mx-auto max-w-[1400px] px-6 lg:px-12">
         <Reveal>
           <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-accent">
@@ -35,7 +37,7 @@ export function Process({ dict }: { dict: Dictionary }) {
           </h2>
         </Reveal>
 
-        <div className="mt-16 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-16 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {dict.process.items.map((item, i) => (
             <Reveal
               key={item.title}

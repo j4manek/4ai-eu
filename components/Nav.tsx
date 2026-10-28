@@ -2,41 +2,36 @@ import Link from "next/link";
 import type { Dictionary, Locale } from "@/lib/dictionaries";
 import { LangSwitch } from "./LangSwitch";
 import { MobileNav } from "./MobileNav";
+import { Brand } from "./Brand";
 
 export function Nav({ dict, locale }: { dict: Dictionary; locale: Locale }) {
   return (
-    <header className="fixed inset-x-0 top-0 z-50">
-      <div className="mx-auto flex max-w-[1400px] items-center justify-between px-6 py-5 lg:px-12">
+    <header className="fixed inset-x-0 top-0 z-50 pt-[env(safe-area-inset-top)]">
+      {/* blur lives on its own layer: backdrop-filter on the header would trap the fixed mobile menu inside it */}
+      <div aria-hidden className="absolute inset-0 -z-10 border-b border-line bg-bg/75 backdrop-blur-md" />
+      <div className="mx-auto flex h-16 max-w-[1400px] items-center justify-between px-6 sm:h-[72px] lg:px-12">
         <Link
           href={`/${locale}`}
-          className="font-display text-lg font-semibold tracking-tight"
+          className="-my-3 py-3 font-display text-lg font-semibold tracking-tight"
         >
-          4AI
+          <Brand />
         </Link>
 
         <nav className="hidden items-center gap-8 font-mono text-[11px] uppercase tracking-wider text-ink-dim md:flex">
-          <a href="#services" className="transition-colors hover:text-ink">
-            {dict.nav.services}
-          </a>
-          <a href="#process" className="transition-colors hover:text-ink">
-            {dict.nav.process}
-          </a>
-          <a href="#about" className="transition-colors hover:text-ink">
-            {dict.nav.about}
-          </a>
-          <a href="#contact" className="transition-colors hover:text-ink">
-            {dict.nav.contact}
-          </a>
+          {[
+            ["#projects", dict.nav.projects],
+            ["#services", dict.nav.services],
+            ["#process", dict.nav.process],
+            ["#faq", dict.nav.faq],
+            ["#contact", dict.nav.contact],
+          ].map(([href, label]) => (
+            <a key={href} href={href} className="py-3 transition-colors hover:text-ink">
+              {label}
+            </a>
+          ))}
         </nav>
 
         <div className="flex items-center gap-3">
-          <span className="hidden items-center gap-1.5 font-mono text-[11px] uppercase tracking-wider text-ink-dim sm:flex">
-            <span className="relative flex h-1.5 w-1.5">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-signal opacity-60" />
-              <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-signal" />
-            </span>
-            {dict.nav.status}
-          </span>
           <LangSwitch locale={locale} />
           <a
             href="#contact"
