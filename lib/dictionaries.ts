@@ -103,6 +103,13 @@ export interface Dictionary {
       note: string;
     };
   };
+  ads: {
+    eyebrow: string;
+    heading: string;
+    intro: string;
+    items: { title: string; badge?: string; text: string; points: string[] }[];
+    cta: string;
+  };
   benefits: { eyebrow: string; heading: string; intro: string; items: { title: string; text: string }[]; note: string };
   ai: { eyebrow: string; heading: string; intro: string; items: { title: string; text: string }[]; note: string };
   services: {
@@ -158,7 +165,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
     meta: {
       title: "4manek AI – AI automatizace, AI agenti a weby pro firmy",
       description:
-        "Stavím AI agenty, automatizace firemních procesů a weby. První konzultace je zdarma, cenu navrhnu až po ní.",
+        "Stavím AI agenty, automatizace firemních procesů a weby, spravuji reklamy a dělám jejich audity. První konzultace je zdarma, cenu navrhnu až po ní.",
     },
     nav: {
       projects: "Projekty",
@@ -320,6 +327,36 @@ export const dictionaries: Record<Locale, Dictionary> = {
         note: "Ceny v ukázce jsou výchozí odhad. Před ostrým nasazením se nahradí skutečným ceníkem firmy.",
       },
     },
+    ads: {
+      eyebrow: "REKLAMA",
+      heading: "Správa reklam i nezávislý audit",
+      intro: "Reklama je jen tak dobrá, jak dobře je nastavený web, měření a kampaně. Postarám se o celý řetězec, nebo jen nezávisle zkontroluji, co už běží.",
+      items: [
+        {
+          title: "Kompletní správa reklam",
+          text: "Od základů po každodenní optimalizaci. Reklama začíná webem a měřením, proto nastavím všechno, ne jen kampaně.",
+          points: [
+            "Nastavení nebo úprava webu pro reklamu",
+            "Měření konverzí: telefonáty, formuláře, poptávky",
+            "Tvorba reklam a kampaní",
+            "Průběžná správa a optimalizace",
+            "Přehledné vyhodnocování výsledků",
+          ],
+        },
+        {
+          title: "Externí audit reklam",
+          badge: "Bez převzetí správy",
+          text: "Nejste si jistí, že váš současný správce dosahuje dostatečných výsledků? Udělám nezávislý audit, bez závazku změnit dodavatele.",
+          points: [
+            "Kontrola účtu, kampaní a rozpočtu",
+            "Ověření, že se správně měří konverze",
+            "Hledání plýtvání rozpočtem",
+            "Písemná doporučení, co zlepšit jako první",
+          ],
+        },
+      ],
+      cta: "Poptat audit nebo správu",
+    },
     benefits: {
       eyebrow: "PROČ AUTOMATIZOVAT",
       heading: "Automatizace šetří čas lidí i peníze firmy",
@@ -435,6 +472,10 @@ export const dictionaries: Record<Locale, Dictionary> = {
           a: "Záleží na tom, kolik opakované práce ve firmě je. Na bezplatné konzultaci společně odhadneme, kolik času a nákladů se dá ušetřit, a doporučím jen to, co se vyplatí. Čísla předem slibovat nemohu.",
         },
         {
+          q: "Děláte i samotný audit reklam?",
+          a: "Ano. Pokud si nejste jisti, že současný správce dosahuje dostatečných výsledků, udělám nezávislý audit bez převzetí správy. Nemusíte kvůli tomu měnit dodavatele.",
+        },
+        {
           q: "Co se děje na první konzultaci?",
           a: "Krátký hovor o tom, čím se firma zabývá, kde se opakuje ruční práce a co byste chtěli vyřešit. Odnesete si doporučení, co má smysl dělat jako první. Klidně i to, že zatím nic.",
         },
@@ -494,7 +535,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       },
     },
     footer: {
-      tagline: "Weby, automatizace a AI agenti pro firmy.",
+      tagline: "AI, automatizace, weby a reklama pro firmy.",
       rights: "Všechna práva vyhrazena.",
       email: "jony.form@seznam.cz",
       privacyLink: "Zásady ochrany osobních údajů",
@@ -555,7 +596,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
     meta: {
       title: "4manek AI – AI automation, AI agents and websites for companies",
       description:
-        "I build AI agents, business process automation and websites. The first consultation is free; I quote a price only after it.",
+        "I build AI agents, business process automation and websites, manage ads and run ad audits. The first consultation is free; I quote a price only after it.",
     },
     nav: {
       projects: "Projects",
@@ -717,6 +758,36 @@ export const dictionaries: Record<Locale, Dictionary> = {
         note: "Prices in the demo are placeholder estimates. They will be replaced with the company's real price list before launch.",
       },
     },
+    ads: {
+      eyebrow: "ADVERTISING",
+      heading: "Ad management and independent audits",
+      intro: "Advertising is only as good as your website, tracking and campaigns. I can take care of the whole chain, or just independently check what is already running.",
+      items: [
+        {
+          title: "Complete ad management",
+          text: "From the foundations to daily optimisation. Advertising starts with the website and tracking, so I set up everything, not just campaigns.",
+          points: [
+            "Setting up or adjusting the website for advertising",
+            "Conversion tracking: calls, forms, enquiries",
+            "Creating ads and campaigns",
+            "Ongoing management and optimisation",
+            "Clear reporting of results",
+          ],
+        },
+        {
+          title: "External ad audit",
+          badge: "No takeover of management",
+          text: "Not sure your current manager delivers good enough results? I'll run an independent audit, with no obligation to change supplier.",
+          points: [
+            "Review of the account, campaigns and budget",
+            "Checking that conversions are tracked correctly",
+            "Finding wasted budget",
+            "Written recommendations on what to improve first",
+          ],
+        },
+      ],
+      cta: "Request an audit or management",
+    },
     benefits: {
       eyebrow: "WHY AUTOMATE",
       heading: "Automation saves your people's time and the company's money",
@@ -832,6 +903,10 @@ export const dictionaries: Record<Locale, Dictionary> = {
           a: "It depends on how much repetitive work there is in your company. In the free consultation we estimate together how much time and cost can be saved, and I recommend only what pays off. I can't promise numbers up front.",
         },
         {
+          q: "Do you also do standalone ad audits?",
+          a: "Yes. If you're not sure your current manager delivers good enough results, I'll run an independent audit without taking over management. You don't have to change supplier for that.",
+        },
+        {
           q: "What happens in the first consultation?",
           a: "A short call about what your company does, where manual work repeats and what you'd like to solve. You leave with a recommendation of what to do first. Even “nothing yet” can be the answer.",
         },
@@ -891,7 +966,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
       },
     },
     footer: {
-      tagline: "Websites, automation and AI agents for companies.",
+      tagline: "AI, automation, websites and advertising for companies.",
       rights: "All rights reserved.",
       email: "jony.form@seznam.cz",
       privacyLink: "Privacy Policy",

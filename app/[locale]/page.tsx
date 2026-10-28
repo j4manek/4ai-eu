@@ -5,6 +5,7 @@ import { Hero } from "@/components/Hero";
 import { Projects } from "@/components/Projects";
 import { Services } from "@/components/Services";
 import { Process } from "@/components/Process";
+import { Ads } from "@/components/Ads";
 import { Benefits } from "@/components/Benefits";
 import { AiPractice } from "@/components/AiPractice";
 import { Faq } from "@/components/Faq";
@@ -30,6 +31,7 @@ export default async function HomePage({
         <Projects dict={dict} />
         <AiPractice dict={dict} />
         <Services dict={dict} />
+        <Ads dict={dict} />
         <Process dict={dict} />
         <About dict={dict} />
         <Faq dict={dict} />
