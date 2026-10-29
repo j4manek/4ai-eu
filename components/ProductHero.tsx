@@ -7,12 +7,14 @@ export function ProductHero({
   headline,
   sub,
   cta,
+  note,
 }: {
   eyebrow: string;
   badge?: string;
   headline: string;
   sub: string;
   cta: { href: string; label: string };
+  note?: string;
 }) {
   return (
     <section className="px-6 pb-16 pt-36 sm:pb-24 sm:pt-44 lg:px-12">
@@ -30,13 +32,16 @@ export function ProductHero({
             {headline}
           </h1>
           <p className="mt-6 max-w-2xl text-lg text-ink-dim">{sub}</p>
-          <Link
-            href={cta.href}
-            className="group mt-10 inline-flex items-center gap-2 rounded-full bg-ink px-6 py-3.5 font-mono text-[12px] uppercase tracking-wider text-bg transition-transform hover:scale-105"
-          >
-            {cta.label}
-            <span className="transition-transform group-hover:translate-x-1">→</span>
-          </Link>
+          <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4">
+            <Link
+              href={cta.href}
+              className="group inline-flex items-center gap-2 rounded-full bg-ink px-6 py-3.5 font-mono text-[12px] uppercase tracking-wider text-bg transition-transform hover:scale-105"
+            >
+              {cta.label}
+              <span className="transition-transform group-hover:translate-x-1">→</span>
+            </Link>
+            {note && <p className="font-display text-2xl font-semibold tracking-tight">{note}</p>}
+          </div>
         </Reveal>
       </div>
     </section>

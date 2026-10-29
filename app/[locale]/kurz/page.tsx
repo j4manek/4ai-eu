@@ -39,6 +39,7 @@ export default async function CoursePage({
           headline={c.headline}
           sub={c.sub}
           cta={{ href: "#waitlist", label: c.cta }}
+          note={c.price}
         />
         <CardGrid heading={c.inside.heading} items={c.inside.items} label="LEKCE" />
         <CardGrid heading={c.audience.heading} items={c.audience.items} label="PRO" />
