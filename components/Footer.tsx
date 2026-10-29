@@ -6,7 +6,7 @@ export function Footer({ dict, locale }: { dict: Dictionary; locale: Locale }) {
     <footer className="border-t border-line py-10">
       <div className="mx-auto flex max-w-[1400px] flex-col items-start justify-between gap-4 px-6 sm:flex-row sm:items-center lg:px-12">
         <div>
-          <Brand className="font-display text-base font-semibold tracking-tight" />
+          <Brand animated={false} className="font-display text-base font-semibold tracking-tight" />
           <p className="mt-1 text-sm text-ink-faint">{dict.footer.tagline}</p>
           <a
             href={`mailto:${dict.footer.email}`}

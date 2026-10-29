@@ -157,6 +157,55 @@ body {
   animation: shimmer 6s linear infinite;
 }
 
+/* Logo morph: 4manek AI <-> 4AI. One 5s loop; letters and the width share the same timeline. */
+.brand-morph {
+  display: inline-flex;
+  align-items: baseline;
+  white-space: pre;
+}
+
+.brand-tail {
+  display: inline-grid;
+  grid-template-columns: 1fr;
+  animation: brand-gap 5s infinite;
+}
+
+.brand-tail-inner {
+  min-width: 0;
+  overflow-x: clip;
+  display: inline-flex;
+}
+
+.brand-letter {
+  display: inline-block;
+  transform-origin: 50% 80%;
+  animation: brand-letter 5s infinite;
+  animation-delay: calc(var(--i) * 30ms);
+}
+
+.brand-ai {
+  display: inline-block;
+  animation: brand-ai 5s infinite;
+}
+
+@keyframes brand-gap {
+  0%, 28% { grid-template-columns: 1fr; animation-timing-function: cubic-bezier(0.7, 0, 0.2, 1); }
+  40%, 60% { grid-template-columns: 0fr; animation-timing-function: cubic-bezier(0.7, 0, 0.2, 1); }
+  72%, 100% { grid-template-columns: 1fr; }
+}
+
+@keyframes brand-letter {
+  0%, 26% { opacity: 1; transform: none; filter: blur(0); animation-timing-function: ease-in; }
+  36%, 62% { opacity: 0; transform: translateY(-0.5em) scale(0.5); filter: blur(4px); animation-timing-function: ease-out; }
+  72%, 100% { opacity: 1; transform: none; filter: blur(0); }
+}
+
+@keyframes brand-ai {
+  0%, 32% { text-shadow: 0 0 0 transparent; transform: none; }
+  42%, 58% { text-shadow: 0 0 14px var(--color-accent); transform: scale(1.06); }
+  70%, 100% { text-shadow: 0 0 0 transparent; transform: none; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

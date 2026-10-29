@@ -12,7 +12,7 @@ export function Nav({ dict, locale }: { dict: Dictionary; locale: Locale }) {
       <div className="mx-auto flex h-16 max-w-[1400px] items-center justify-between px-6 sm:h-[72px] lg:px-12">
         <Link
           href={`/${locale}`}
-          className="-my-3 py-3 font-display text-lg font-semibold tracking-tight"
+          className="-my-3 min-w-[5.6rem] py-3 font-display text-lg font-semibold tracking-tight"
         >
           <Brand />
         </Link>
