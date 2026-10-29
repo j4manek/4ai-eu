@@ -5,6 +5,7 @@ import { display, body, mono } from "../fonts";
 import "../globals.css";
 import { locales, getDictionary, type Locale } from "@/lib/dictionaries";
 import { SmoothScroll } from "@/components/SmoothScroll";
+import { Ambient } from "@/components/Ambient";
 
 const GA_ID = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
 
@@ -46,6 +47,7 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} className={`${display.variable} ${body.variable} ${mono.variable}`}>
       <body className="bg-bg font-sans text-ink">
+        <Ambient />
         <div className="relative z-10">
           <SmoothScroll>{children}</SmoothScroll>
         </div>

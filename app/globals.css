@@ -241,6 +241,113 @@ body {
   70%, 100% { text-shadow: 0 0 0 transparent; transform: none; }
 }
 
+/* Scroll-reactive backdrop (see components/Ambient.tsx) */
+.ambient {
+  --p: 0;
+  --v: 0;
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.ambient-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(85, 224, 255, 0.09) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(85, 224, 255, 0.09) 1px, transparent 1px);
+  background-size: 64px 64px;
+  background-position: 0 calc(var(--p) * -1280px);
+  opacity: calc(0.45 + var(--v) * 0.55);
+  -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 35%, #000 0%, transparent 80%);
+  mask-image: radial-gradient(ellipse 80% 70% at 50% 35%, #000 0%, transparent 80%);
+}
+
+.ambient-blob {
+  position: absolute;
+  width: 70vmax;
+  height: 70vmax;
+  will-change: transform, opacity;
+}
+
+.ambient-blob::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  animation: ambient-breathe 9s ease-in-out infinite;
+}
+
+.ambient-blob-a {
+  top: -28vmax;
+  left: -22vmax;
+  opacity: calc((0.55 + var(--v) * 0.25) * (1 - var(--p) * 0.55));
+  transform: translate3d(calc(var(--p) * 18vw), calc(var(--p) * -30vh), 0);
+}
+.ambient-blob-a::before {
+  background: radial-gradient(closest-side, rgba(85, 224, 255, 0.85), transparent);
+}
+
+.ambient-blob-b {
+  top: 25vh;
+  right: -28vmax;
+  opacity: calc((0.38 + var(--v) * 0.25) * (0.6 + var(--p) * 0.7));
+  transform: translate3d(calc(var(--p) * -14vw), calc(var(--p) * -55vh), 0);
+}
+.ambient-blob-b::before {
+  background: radial-gradient(closest-side, rgba(255, 157, 92, 0.85), transparent);
+  animation-duration: 12s;
+  animation-delay: -4s;
+}
+
+.ambient-blob-c {
+  bottom: -34vmax;
+  left: 8vw;
+  opacity: calc((0.25 + var(--v) * 0.22) * (0.3 + var(--p) * 1));
+  transform: translate3d(calc(var(--p) * 22vw), calc(var(--p) * -25vh), 0);
+}
+.ambient-blob-c::before {
+  background: radial-gradient(closest-side, rgba(200, 255, 92, 0.8), transparent);
+  animation-duration: 15s;
+  animation-delay: -8s;
+}
+
+.ambient-scan {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(85, 224, 255, 0.55), transparent);
+  box-shadow: 0 0 24px 2px rgba(85, 224, 255, 0.22);
+  opacity: calc(0.35 + var(--v) * 0.65);
+  animation: ambient-scan 14s linear infinite;
+}
+
+.scroll-progress {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 60;
+  height: 2px;
+  transform: scaleX(0);
+  transform-origin: left;
+  pointer-events: none;
+  background: linear-gradient(90deg, var(--color-accent), var(--color-signal), var(--color-accent-warm));
+  box-shadow: 0 0 12px rgba(85, 224, 255, 0.6);
+}
+
+@keyframes ambient-breathe {
+  0%, 100% { opacity: 0.65; transform: scale(0.92); }
+  50% { opacity: 1; transform: scale(1.08); }
+}
+
+@keyframes ambient-scan {
+  from { transform: translateY(-2vh); }
+  to { transform: translateY(102vh); }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
