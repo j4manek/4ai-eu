@@ -66,7 +66,7 @@ export function Contact({ dict, locale }: { dict: Dictionary; locale: Locale }) 
         </Reveal>
 
         <Reveal delay={0.1}>
-          <form onSubmit={handleSubmit} className="flex flex-col gap-6">
+          <form onSubmit={handleSubmit} className="flex flex-col gap-6 rounded-2xl border border-line-strong bg-bg/85 p-6 backdrop-blur-md sm:p-8">
             <input
               type="text"
               name="_honey"
@@ -77,7 +77,7 @@ export function Contact({ dict, locale }: { dict: Dictionary; locale: Locale }) 
             />
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
               <label className="flex flex-col gap-2">
-                <span className="font-mono text-[11px] uppercase tracking-wider text-ink-faint">
+                <span className="font-mono text-[11px] uppercase tracking-wider text-ink-dim">
                   {f.company}
                 </span>
                 <input
@@ -86,11 +86,11 @@ export function Contact({ dict, locale }: { dict: Dictionary; locale: Locale }) 
                   type="text"
                   autoComplete="organization"
                   placeholder={f.companyPlaceholder}
-                  className="border-b border-line bg-transparent py-2.5 text-ink placeholder:text-ink-faint focus:border-accent focus:outline-none"
+                  className="border-b border-line bg-transparent py-2.5 text-ink placeholder:text-ink-dim/80 focus:border-accent focus:outline-none"
                 />
               </label>
               <label className="flex flex-col gap-2">
-                <span className="font-mono text-[11px] uppercase tracking-wider text-ink-faint">
+                <span className="font-mono text-[11px] uppercase tracking-wider text-ink-dim">
                   {f.revenue}
                 </span>
                 <div className="relative">
@@ -118,7 +118,7 @@ export function Contact({ dict, locale }: { dict: Dictionary; locale: Locale }) 
 
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
               <label className="flex flex-col gap-2">
-                <span className="font-mono text-[11px] uppercase tracking-wider text-ink-faint">
+                <span className="font-mono text-[11px] uppercase tracking-wider text-ink-dim">
                   {f.email}
                 </span>
                 <input
@@ -127,11 +127,11 @@ export function Contact({ dict, locale }: { dict: Dictionary; locale: Locale }) 
                   type="email"
                   autoComplete="email"
                   placeholder={f.emailPlaceholder}
-                  className="border-b border-line bg-transparent py-2.5 text-ink placeholder:text-ink-faint focus:border-accent focus:outline-none"
+                  className="border-b border-line bg-transparent py-2.5 text-ink placeholder:text-ink-dim/80 focus:border-accent focus:outline-none"
                 />
               </label>
               <label className="flex flex-col gap-2">
-                <span className="font-mono text-[11px] uppercase tracking-wider text-ink-faint">
+                <span className="font-mono text-[11px] uppercase tracking-wider text-ink-dim">
                   {f.phone}
                 </span>
                 <input
@@ -140,13 +140,13 @@ export function Contact({ dict, locale }: { dict: Dictionary; locale: Locale }) 
                   type="tel"
                   autoComplete="tel"
                   placeholder={f.phonePlaceholder}
-                  className="border-b border-line bg-transparent py-2.5 text-ink placeholder:text-ink-faint focus:border-accent focus:outline-none"
+                  className="border-b border-line bg-transparent py-2.5 text-ink placeholder:text-ink-dim/80 focus:border-accent focus:outline-none"
                 />
               </label>
             </div>
 
             <label className="flex flex-col gap-2">
-              <span className="font-mono text-[11px] uppercase tracking-wider text-ink-faint">
+              <span className="font-mono text-[11px] uppercase tracking-wider text-ink-dim">
                 {f.message}
               </span>
               <textarea
@@ -154,7 +154,7 @@ export function Contact({ dict, locale }: { dict: Dictionary; locale: Locale }) 
                 name="message"
                 rows={5}
                 placeholder={f.messagePlaceholder}
-                className="resize-none border-b border-line bg-transparent py-2.5 text-ink placeholder:text-ink-faint focus:border-accent focus:outline-none"
+                className="resize-none border-b border-line bg-transparent py-2.5 text-ink placeholder:text-ink-dim/80 focus:border-accent focus:outline-none"
               />
             </label>
 

@@ -293,7 +293,7 @@ body {
 .ambient-blob-b {
   top: 25vh;
   right: -28vmax;
-  opacity: calc((0.38 + var(--v) * 0.25) * (0.6 + var(--p) * 0.7));
+  opacity: calc((0.24 + var(--v) * 0.2) * (0.6 + var(--p) * 0.4));
   transform: translate3d(calc(var(--p) * -14vw), calc(var(--p) * -55vh), 0);
 }
 .ambient-blob-b::before {
@@ -305,7 +305,7 @@ body {
 .ambient-blob-c {
   bottom: -34vmax;
   left: 8vw;
-  opacity: calc((0.25 + var(--v) * 0.22) * (0.3 + var(--p) * 1));
+  opacity: calc((0.18 + var(--v) * 0.18) * (0.3 + var(--p) * 0.8));
   transform: translate3d(calc(var(--p) * 22vw), calc(var(--p) * -25vh), 0);
 }
 .ambient-blob-c::before {
