@@ -163,9 +163,9 @@ export interface Dictionary {
 export const dictionaries: Record<Locale, Dictionary> = {
   cs: {
     meta: {
-      title: "4manek AI – AI automatizace, AI agenti a weby pro firmy",
+      title: "4manek AI – automatizace, AI agenti a weby pro firmy",
       description:
-        "Stavím AI agenty, automatizace firemních procesů a weby, spravuji reklamy a dělám jejich audity. První konzultace je zdarma, cenu navrhnu až po ní.",
+        "Jmenuji se Jonáš Formánek. Dělám firmám weby, automatizace a AI agenty, spravuji reklamy. První konzultace je zdarma, pak navrhnu řešení na míru.",
     },
     nav: {
       projects: "Projekty",
@@ -178,11 +178,11 @@ export const dictionaries: Record<Locale, Dictionary> = {
     },
     hero: {
       eyebrow: "AI STUDIO · AUTOMATIZACE · WEBY",
-      headline: ["AI AUTOMATIZACE", "A WEBY, KTERÉ", "FIRMĚ ŠETŘÍ ČAS."],
-      sub: "Dělám AI: stavím AI agenty, automatizace firemních procesů a weby. Převezmou opakovanou práci, ušetří čas lidí i peníze a uvolní cashflow pro růst. Mluvíte přímo s tím, kdo to staví.",
+      headline: ["AUTOMATIZACE", "A WEBY, KTERÉ", "UŠETŘÍ PRÁCI."],
+      sub: "Stavím weby, automatizace a AI agenty a spravuji reklamy. Jsem jeden člověk, takže mluvíte přímo s tím, kdo to dělá. První konzultace je zdarma, pak pro vás připravím návrh na míru a podle něj pokračujeme.",
       ctaPrimary: "Domluvit bezplatnou konzultaci",
       ctaSecondary: "Projekty",
-      trust: ["První konzultace zdarma", "Cenu navrhnu až po ní", "Odpověď do dvou pracovních dnů"],
+      trust: ["První konzultace zdarma · návrh na míru · odpovídám do dvou pracovních dnů"],
       demo: {
         title: "Co automatizace ušetří",
         savedLabel: "Ušetřeno automatizací",
@@ -209,7 +209,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
     projects: {
       eyebrow: "PROJEKTY",
       heading: "Co už jsem postavil",
-      intro: "Automatizace, nástroje a weby, na kterých ukazuji, jak pracuji. Kliknutím rozbalíte podrobnosti.",
+      intro: "Pár věcí, které jsem dělal. Rozklikněte, co vás zajímá.",
       more: "Zobrazit detaily",
       less: "Skrýt detaily",
       webs: {
@@ -218,7 +218,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
           {
             status: "V provozu",
             title: "Instalatérství Janák",
-            hook: "Web, který z hledání instalatéra udělá jeden telefonát. A každý telefonát se dá změřit.",
+            hook: "Aby lidé, kteří hledají instalatéra, zavolali. A abychom věděli, kolik jich zavolalo.",
             description:
               "Web instalatérské firmy pro Královéhradecký a Pardubický kraj. Stránky služeb, mimo jiné pro bytové domy a SVJ, poptávkové formuláře a měření telefonátů a poptávek pro Google Ads.",
             tags: ["Web na míru", "Formuláře", "GA4 + Google Ads"],
@@ -230,7 +230,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
           {
             status: "Redesign",
             title: "Koftex – šití a výšivky",
-            hook: "Web šicí dílny, který zákazníkovi spočítá cenu výšivky dřív, než zvedne telefon.",
+            hook: "Zákazník si na webu spočítá cenu výšivky sám, ještě než firmě zavolá.",
             description:
               "Přepracovaný web šicí dílny a výšivkárny v Kolíně. Zaměřený na firemní zákazníky, s rychlou poptávkou, sekcí s častými dotazy a kalkulačkou ceny.",
             tags: ["Redesign", "B2B poptávka", "Kalkulačka"],
@@ -242,9 +242,9 @@ export const dictionaries: Record<Locale, Dictionary> = {
           {
             status: "Právě čtete",
             title: "4manek AI",
-            hook: "Web, který právě čtete. Česky i anglicky, rychlý a bez hotové šablony.",
+            hook: "Web, na kterém právě jste.",
             description:
-              "Tento web. Dvojjazyčný (česky a anglicky), rychlý, s poptávkovým formulářem.",
+              "Česky i anglicky, napsaný od nuly bez hotové šablony. Formulář chodí rovnou na můj e-mail.",
             tags: ["Next.js", "CZ / EN", "Poptávkový formulář"],
             image: "site-preview.jpg",
             imageAlt: "Náhled webu 4manek AI",
@@ -255,9 +255,9 @@ export const dictionaries: Record<Locale, Dictionary> = {
         label: "Automatizace",
         status: "Použito na reálné zakázce",
         title: "Dohledání cen z B2B portálů",
-        hook: "143 položek, žádné ruční proklikávání portálů. AI dohledá, člověk schválí.",
+        hook: "143 položek ze zakázky a žádné proklikávání portálů. Agent hledá, člověk schvaluje.",
         description:
-          "Nacenění veřejné zakázky na ochranné pracovní pomůcky znamená najít cenu u každé položky. V jedné zakázce jich bylo 143. AI agent každou položku nejdřív identifikuje, protože název ze zadání se často liší od názvu v ceníku. Pak ji vyhledá v přihlášených B2B portálech dodavatelů a vybere nejvýhodnější dostupnou variantu. Hotovou tabulku ke kontrole dostane člověk.",
+          "Při nacenění veřejné zakázky na pracovní pomůcky se hledá cena u každé položky. V jedné jich bylo 143. Agent nejdřív zjistí, co se v zadání doopravdy myslí, protože název se často liší od ceníku. Pak položku najde v B2B portálech dodavatelů a vybere nejlevnější dostupnou variantu. Člověk dostane tabulku ke kontrole.",
         facts: ["143 položek v jedné zakázce", "Ceny jen z přihlášených B2B ceníků", "Výsledek vždy kontroluje člověk"],
         steps: [
           { title: "Identifikace zboží", text: "Zjistí výrobce, typ a alternativní názvy. Doslovné hledání textu ze zadání zboží často mine." },
@@ -266,7 +266,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
           { title: "Kontrola člověkem", text: "Tabulka jde ke schválení a položky bez nálezu jsou zřetelně označené." },
         ],
         lesson:
-          "Poučení z praxe: porovnání s ruční kalkulací ukázalo, že rozhoduje počet pokrytých portálů. Agent proto nejdřív sestaví úplný seznam dostupných dodavatelských účtů a teprve potom ceny hledá.",
+          "Co jsem se naučil: při srovnání s ruční kalkulací rozhodovalo, kolik portálů se pokryje. Agent proto nejdřív sestaví seznam všech dodavatelských účtů a až pak hledá ceny.",
         visual: {
           itemsLabel: "Položky ze zadání",
           items: ["Zimní pracovní rukavice", "Svářečský oblek", "Chrániče sluchu", "Pracovní obuv S3", "Ochranné brýle"],
@@ -359,30 +359,30 @@ export const dictionaries: Record<Locale, Dictionary> = {
     },
     benefits: {
       eyebrow: "PROČ AUTOMATIZOVAT",
-      heading: "Automatizace šetří čas lidí i peníze firmy",
-      intro: "Přepisování dat, třídění e-mailů nebo ruční nacenění stojí každý měsíc hodiny práce. Automatizace je přebere.",
+      heading: "Co se dá ušetřit",
+      intro: "Přepisování dat, třídění e-mailů, ruční nacenění. Dohromady to bývají hodiny práce každý měsíc.",
       items: [
-        { title: "Čas zaměstnanců", text: "Opakovanou práci dělá systém. Lidé mají čas na úkoly, které vyžadují úsudek, kontakt se zákazníkem a nápady." },
-        { title: "Nižší náklady", text: "Za opakované úkoly přestanete platit mzdový čas. Systém běží bez přestávek a bez front." },
-        { title: "Větší cashflow", text: "Uvolněné peníze a kapacity můžete investovat do nových zákazníků, produktů a dalšího růstu firmy." },
+        { title: "Méně ruční práce", text: "Opakované úkoly dělá systém. Lidé řeší to, co vyžaduje úsudek a kontakt se zákazníkem." },
+        { title: "Menší náklady", text: "Za opakované úkoly přestanete platit hodiny práce. Systém u nich nemá fronty ani čekání." },
+        { title: "Prostor pro růst", text: "Uvolněný čas a peníze můžete dát do nových zákazníků a produktů." },
       ],
-      note: "Kolik přesně ušetříte, spočítáme na bezplatné konzultaci podle vašich procesů. Slibuji jen to, co se dá změřit.",
+      note: "Kolik přesně u vás, spočítáme při první konzultaci. Čísla slibovat předem nebudu.",
     },
     ai: {
       eyebrow: "AI V PRAXI",
-      heading: "Umělá inteligence, která dělá skutečnou práci",
-      intro: "AI není u mě efekt na webu. Je to nástroj, kterým firmám přebírám opakovanou práci.",
+      heading: "Co AI u firem opravdu dělá",
+      intro: "Žádné chatovací okénko na webu. AI u mě přebírá konkrétní opakovanou práci.",
       items: [
-        { title: "Čte a chápe", text: "AI agenti zpracují e-maily, poptávky a dokumenty a vyčtou z nich, na čem záleží." },
-        { title: "Hledá a porovnává", text: "Dohledá zboží a ceny napříč dodavatelskými portály a nabídne nejvýhodnější variantu." },
-        { title: "Připravuje podklady", text: "Z dat sestaví koncept nabídky, přehled nebo odpověď. Člověk jen zkontroluje a schválí." },
-        { title: "Zavede se do firmy", text: "Napojím AI na vaše systémy a procesy a zaučím tým, aby s ní uměl pracovat." },
+        { title: "E-maily a poptávky", text: "AI agenti zpracují e-maily, poptávky a dokumenty a vyčtou z nich, na čem záleží." },
+        { title: "Hledání a porovnání cen", text: "Dohledá zboží a ceny napříč dodavatelskými portály a nabídne nejvýhodnější variantu." },
+        { title: "Koncepty nabídek", text: "Z dat sestaví koncept nabídky, přehled nebo odpověď. Člověk jen zkontroluje a schválí." },
+        { title: "Zavedení do firmy", text: "Napojím AI na vaše systémy a procesy a zaučím tým, aby s ní uměl pracovat." },
       ],
-      note: "Tam, kde to má smysl, rozhoduje vždy člověk. AI připravuje, vy schvalujete.",
+      note: "AI připravuje, vy schvalujete.",
     },
     services: {
       eyebrow: "CO NABÍZÍM",
-      heading: "Čtyři oblasti, ve kterých pomáhám firmám",
+      heading: "Co dělám",
       items: [
         {
           title: "Weby a digitální produkty",
@@ -390,7 +390,6 @@ export const dictionaries: Record<Locale, Dictionary> = {
             "Firemní weby, landing pages a interní nástroje, navržené a postavené rychle a s péčí o detail.",
           points: [
             "Design a vývoj na míru",
-            "Rychlé a responzivní stránky",
             "Poptávkové formuláře a měření konverzí",
             "Nasazení a dlouhodobá údržba",
           ],
@@ -411,7 +410,6 @@ export const dictionaries: Record<Locale, Dictionary> = {
           description:
             "Data, která dávají smysl: nasbíraná, vyčištěná a připravená k použití v obchodním oddělení i v provozu.",
           points: [
-            "Návrh datového modelu",
             "Sběr a obohacování dat z veřejných zdrojů",
             "Datové pipeline a automatické aktualizace",
             "Přehledy a dashboardy",
@@ -425,29 +423,28 @@ export const dictionaries: Record<Locale, Dictionary> = {
             "Audit procesů",
             "Seřazení podle přínosu a náročnosti",
             "Plán zavedení",
-            "Zaučení týmu",
           ],
           badge: "První konzultace zdarma",
         },
       ],
       consult: {
         title: "První konzultace je zdarma",
-        text: "Probereme, čím se firma zabývá a co zdržuje. Cenu navrhnu až po konzultaci, podle toho, co skutečně dává smysl postavit.",
+        text: "Probereme, čím se firma zabývá a co zdržuje. Podle toho pro vás připravím návrh na míru a pak pokračujeme.",
         cta: "Domluvit konzultaci",
       },
       cta: "Poptat",
     },
     process: {
       eyebrow: "POSTUP",
-      heading: "Čtyři kroky od prvního hovoru k provozu",
+      heading: "Jak spolupráce probíhá",
       items: [
         {
           title: "Bezplatná konzultace",
           description: "Probereme firmu, procesy a to, co vás zdržuje. Bez formulářů na tři strany a bez závazku.",
         },
         {
-          title: "Návrh a cena",
-          description: "Po konzultaci dostanete konkrétní návrh řešení a písemnou cenovou nabídku předem.",
+          title: "Návrh na míru",
+          description: "Po konzultaci připravím návrh řešení na míru. Dostanete ho písemně, včetně nabídky, a pak se rozhodnete, jestli pokračujeme.",
         },
         {
           title: "Realizace",
@@ -465,11 +462,11 @@ export const dictionaries: Record<Locale, Dictionary> = {
       items: [
         {
           q: "Kolik to stojí?",
-          a: "Cenu navrhuji až po první bezplatné konzultaci, protože záleží na rozsahu a na tom, co už ve firmě funguje. Nabídku dostanete písemně předem.",
+          a: "Záleží na rozsahu a na tom, co už u vás funguje. Po první konzultaci dostanete návrh řešení na míru a písemnou nabídku, takže před startem víte, do čeho jdete.",
         },
         {
           q: "Vyplatí se mi to?",
-          a: "Záleží na tom, kolik opakované práce ve firmě je. Na bezplatné konzultaci společně odhadneme, kolik času a nákladů se dá ušetřit, a doporučím jen to, co se vyplatí. Čísla předem slibovat nemohu.",
+          a: "Podle toho, kolik opakované práce máte. V hovoru ji spolu odhadneme, a když se to nevyplatí, řeknu vám to.",
         },
         {
           q: "Děláte i samotný audit reklam?",
@@ -477,11 +474,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
         },
         {
           q: "Co se děje na první konzultaci?",
-          a: "Krátký hovor o tom, čím se firma zabývá, kde se opakuje ruční práce a co byste chtěli vyřešit. Odnesete si doporučení, co má smysl dělat jako první. Klidně i to, že zatím nic.",
-        },
-        {
-          q: "Musím mít přesnou představu o tom, co chci?",
-          a: "Ne. Stačí popsat firmu a co vás zdržuje. Na bezplatné konzultaci společně zjistíme, co se vyplatí automatizovat, a navrhneme konkrétní řešení.",
+          a: "Krátký hovor o tom, čím se firma zabývá, kde se opakuje ruční práce a co vás zdržuje. Nemusíte mít přesnou představu, co chcete. Odnesete si doporučení, co dělat jako první, klidně i to, že zatím nic.",
         },
         {
           q: "Napojíte se na naše stávající systémy?",
@@ -493,7 +486,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
         },
         {
           q: "Komu patří kód a data?",
-          a: "Vám. Žádná závislost na jednom dodavateli (vendor lock-in), žádné skryté závislosti.",
+          a: "Vám. Kód i data jsou vaše, na mně nezávisíte.",
         },
       ],
     },
@@ -511,8 +504,8 @@ export const dictionaries: Record<Locale, Dictionary> = {
     contact: {
       eyebrow: "KONTAKT",
       heading: "Domluvte si bezplatnou konzultaci",
-      sub: "Vyplňte krátký formulář. Nemusíte vědět, co automatizovat. To společně zjistíme na bezplatné konzultaci. Ozvu se do dvou pracovních dnů.",
-      assurances: ["Konzultace je zdarma a nezávazná", "Nemusíte vědět, co automatizovat", "Cenu navrhuji až po ní"],
+      sub: "Napište pár vět o firmě a o tom, co vás zdržuje. Nemusíte vědět, co automatizovat. Ozvu se do dvou pracovních dnů.",
+      assurances: ["První konzultace je zdarma a nezávazná"],
       form: {
         company: "Název firmy",
         companyPlaceholder: "Např. Novák s.r.o.",
@@ -594,9 +587,9 @@ export const dictionaries: Record<Locale, Dictionary> = {
   },
   en: {
     meta: {
-      title: "4manek AI – AI automation, AI agents and websites for companies",
+      title: "4manek AI – automation, AI agents and websites for companies",
       description:
-        "I build AI agents, business process automation and websites, manage ads and run ad audits. The first consultation is free; I quote a price only after it.",
+        "I'm Jonáš Formánek. I build websites, automation and AI agents for companies and manage their ads. The first consultation is free, then I propose a solution tailored to you.",
     },
     nav: {
       projects: "Projects",
@@ -609,11 +602,11 @@ export const dictionaries: Record<Locale, Dictionary> = {
     },
     hero: {
       eyebrow: "AI STUDIO · AUTOMATION · WEBSITES",
-      headline: ["AI AUTOMATION", "AND WEBSITES THAT", "SAVE YOUR TIME."],
-      sub: "I do AI: I build AI agents, business process automation and websites. They take over repetitive work, save your people's time and money and free up cash flow for growth. You talk directly to the person building it.",
+      headline: ["AUTOMATION AND", "WEBSITES THAT", "SAVE YOU WORK."],
+      sub: "I build websites, automation and AI agents, and I manage ads. I'm one person, so you talk directly to the one doing the work. The first consultation is free, then I prepare a proposal tailored to you and we carry on from there.",
       ctaPrimary: "Book a free consultation",
       ctaSecondary: "Projects",
-      trust: ["First consultation is free", "Price quoted only after it", "Reply within two business days"],
+      trust: ["First consultation free · tailored proposal · I reply within two business days"],
       demo: {
         title: "What automation saves",
         savedLabel: "Saved by automation",
@@ -640,7 +633,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
     projects: {
       eyebrow: "PROJECTS",
       heading: "What I've already built",
-      intro: "Automation, tools and websites that show how I work. Click to expand the details.",
+      intro: "A few things I've worked on. Expand whatever interests you.",
       more: "Show details",
       less: "Hide details",
       webs: {
@@ -649,7 +642,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
           {
             status: "Live",
             title: "Instalatérství Janák",
-            hook: "A website that turns finding a plumber into one phone call. And every call can be measured.",
+            hook: "So people looking for a plumber pick up the phone. And so we know how many did.",
             description:
               "The website of a plumbing company serving two Czech regions. Service pages including apartment buildings and homeowners' associations (SVJ), enquiry forms, and tracking of calls and enquiries for Google Ads.",
             tags: ["Custom site", "Forms", "GA4 + Google Ads"],
@@ -661,7 +654,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
           {
             status: "Redesign",
             title: "Koftex – sewing and embroidery",
-            hook: "A workshop website that works out the embroidery price before the customer picks up the phone.",
+            hook: "Customers work out the embroidery price on the site themselves, before they ever call.",
             description:
               "A redesigned website for a sewing and embroidery workshop in Kolín. Aimed at business customers, with a quick enquiry form, FAQ and a price calculator.",
             tags: ["Redesign", "B2B enquiry", "Calculator"],
@@ -673,9 +666,9 @@ export const dictionaries: Record<Locale, Dictionary> = {
           {
             status: "You're reading it",
             title: "4manek AI",
-            hook: "The site you are reading. In Czech and English, fast and with no off-the-shelf template.",
+            hook: "The site you're on right now.",
             description:
-              "This site. Bilingual (Czech and English), fast, with an enquiry form.",
+              "In Czech and English, built from scratch with no off-the-shelf template. The form goes straight to my email.",
             tags: ["Next.js", "CZ / EN", "Enquiry form"],
             image: "site-preview.jpg",
             imageAlt: "Preview of the 4manek AI website",
@@ -686,9 +679,9 @@ export const dictionaries: Record<Locale, Dictionary> = {
         label: "Automation",
         status: "Used on a real tender",
         title: "Price lookup across B2B portals",
-        hook: "143 items, no manual clicking through portals. AI finds the prices, a person approves.",
+        hook: "143 items from a tender and no clicking through portals. The agent searches, a person approves.",
         description:
-          "Pricing a public tender for protective work equipment means finding a price for every item. One tender had 143 of them. An AI agent first identifies each item, because the name in the tender often differs from the name in the price list. It then searches the suppliers' B2B portals it is logged in to and picks the best available option. A person gets the finished table to review.",
+          "Pricing a public tender for work equipment means finding a price for every item. One had 143. The agent first works out what the tender actually means, because the name often differs from the price list. Then it finds the item in suppliers' B2B portals and picks the cheapest available option. A person gets the table to review.",
         facts: ["143 items in a single tender", "Prices only from logged-in B2B price lists", "A person always reviews the result"],
         steps: [
           { title: "Identify the product", text: "Finds the manufacturer, type and alternative names. A literal text search for the tender wording often misses the product." },
@@ -697,7 +690,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
           { title: "Human review", text: "The table goes for approval and items with no match are clearly flagged." },
         ],
         lesson:
-          "Lesson from practice: comparing with a manual calculation showed that the number of portals covered is what matters. So the agent first builds a complete list of available supplier accounts and only then starts looking for prices.",
+          "What I learned: compared with a manual calculation, what mattered was how many portals were covered. So the agent first lists all supplier accounts and only then looks for prices.",
         visual: {
           itemsLabel: "Items from the tender",
           items: ["Winter work gloves", "Welding suit", "Ear defenders", "Safety shoes S3", "Safety glasses"],
@@ -790,30 +783,30 @@ export const dictionaries: Record<Locale, Dictionary> = {
     },
     benefits: {
       eyebrow: "WHY AUTOMATE",
-      heading: "Automation saves your people's time and the company's money",
-      intro: "Retyping data, sorting emails or quoting by hand costs hours of work every month. Automation takes it over.",
+      heading: "What can be saved",
+      intro: "Retyping data, sorting emails, quoting by hand. Together that is often hours of work every month.",
       items: [
-        { title: "Employees' time", text: "The system does the repetitive work. People have time for tasks that need judgement, customer contact and ideas." },
-        { title: "Lower costs", text: "You stop paying wage time for repetitive tasks. The system runs without breaks and without queues." },
-        { title: "Stronger cash flow", text: "The money and capacity you free up can go into new customers, products and further growth." },
+        { title: "Less manual work", text: "The system does the repetitive tasks. People handle what needs judgement and customer contact." },
+        { title: "Lower costs", text: "You stop paying hours of work for repetitive tasks. The system has no queues or waiting." },
+        { title: "Room to grow", text: "The time and money you free up can go into new customers and products." },
       ],
-      note: "How much exactly you save, we work out in the free consultation based on your processes. I only promise what can be measured.",
+      note: "How much exactly, we work out in the first consultation. I won't promise numbers up front.",
     },
     ai: {
       eyebrow: "AI IN PRACTICE",
-      heading: "Artificial intelligence that does real work",
-      intro: "For me AI is not a website effect. It is a tool that takes repetitive work off companies' hands.",
+      heading: "What AI actually does for companies",
+      intro: "No chat bubble on a website. For me AI takes over specific repetitive work.",
       items: [
-        { title: "Reads and understands", text: "AI agents process emails, enquiries and documents and pick out what matters." },
-        { title: "Searches and compares", text: "It finds products and prices across supplier portals and suggests the best option." },
-        { title: "Prepares drafts", text: "From the data it builds a draft quote, report or reply. A person only reviews and approves." },
-        { title: "Fits into your company", text: "I connect AI to your systems and processes and train your team to work with it." },
+        { title: "Emails and enquiries", text: "AI agents process emails, enquiries and documents and pick out what matters." },
+        { title: "Finding and comparing prices", text: "It finds products and prices across supplier portals and suggests the best option." },
+        { title: "Draft quotes", text: "From the data it builds a draft quote, report or reply. A person only reviews and approves." },
+        { title: "Rolling it out", text: "I connect AI to your systems and processes and train your team to work with it." },
       ],
-      note: "Where it matters, a person always decides. AI prepares, you approve.",
+      note: "AI prepares, you approve.",
     },
     services: {
       eyebrow: "WHAT I OFFER",
-      heading: "Four areas where I help companies",
+      heading: "What I do",
       items: [
         {
           title: "Websites and digital products",
@@ -821,7 +814,6 @@ export const dictionaries: Record<Locale, Dictionary> = {
             "Company websites, landing pages and internal tools, designed and built with attention to detail and speed.",
           points: [
             "Custom design and development",
-            "Fast, responsive pages",
             "Enquiry forms and conversion tracking",
             "Deployment and long-term upkeep",
           ],
@@ -842,7 +834,6 @@ export const dictionaries: Record<Locale, Dictionary> = {
           description:
             "Data that makes sense: collected, cleaned and ready to use in sales and operations.",
           points: [
-            "Data model design",
             "Collecting and enriching data from public sources",
             "Data pipelines and automatic updates",
             "Reports and dashboards",
@@ -856,29 +847,28 @@ export const dictionaries: Record<Locale, Dictionary> = {
             "Process audit",
             "Ranking by impact and effort",
             "Implementation roadmap",
-            "Team training",
           ],
           badge: "First consultation free",
         },
       ],
       consult: {
         title: "The first consultation is free",
-        text: "We'll talk through what your company does and what slows it down. I quote a price only after the consultation, based on what actually makes sense to build.",
+        text: "We'll talk through what your company does and what slows it down. Based on that I prepare a proposal tailored to you, and we carry on from there.",
         cta: "Book a consultation",
       },
       cta: "Enquire",
     },
     process: {
       eyebrow: "PROCESS",
-      heading: "Four steps from first call to production",
+      heading: "How working together goes",
       items: [
         {
           title: "Free consultation",
           description: "We go through your company, your processes and what slows you down. No three-page forms, no obligation.",
         },
         {
-          title: "Proposal and price",
-          description: "After the consultation you get a concrete proposal and a written quote up front.",
+          title: "Tailored proposal",
+          description: "After the consultation I prepare a proposal tailored to you. You get it in writing, with a quote, and then decide whether we carry on.",
         },
         {
           title: "Implementation",
@@ -896,11 +886,11 @@ export const dictionaries: Record<Locale, Dictionary> = {
       items: [
         {
           q: "How much does it cost?",
-          a: "I quote a price only after the first free consultation, because it depends on scope and on what already works in your company. You get the quote in writing, up front.",
+          a: "It depends on scope and on what already works in your company. After the first consultation you get a tailored proposal and a written quote, so you know what you're getting into before we start.",
         },
         {
           q: "Will it pay off for me?",
-          a: "It depends on how much repetitive work there is in your company. In the free consultation we estimate together how much time and cost can be saved, and I recommend only what pays off. I can't promise numbers up front.",
+          a: "It depends on how much repetitive work you have. We estimate it together in the call, and if it won't pay off, I'll tell you.",
         },
         {
           q: "Do you also do standalone ad audits?",
@@ -908,11 +898,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
         },
         {
           q: "What happens in the first consultation?",
-          a: "A short call about what your company does, where manual work repeats and what you'd like to solve. You leave with a recommendation of what to do first. Even “nothing yet” can be the answer.",
-        },
-        {
-          q: "Do I need to know exactly what I want?",
-          a: "No. Just describe your company and what slows you down. We'll work out the specific solution together.",
+          a: "A short call about what your company does, where manual work repeats and what slows you down. You don't need a precise idea of what you want. You leave with a recommendation of what to do first, even if it's “nothing yet”.",
         },
         {
           q: "Can you connect to our existing systems?",
@@ -924,7 +910,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
         },
         {
           q: "Who owns the code and the data?",
-          a: "You do. No vendor lock-in, no hidden dependencies.",
+          a: "You do. The code and data are yours, and you don't depend on me.",
         },
       ],
     },
@@ -942,8 +928,8 @@ export const dictionaries: Record<Locale, Dictionary> = {
     contact: {
       eyebrow: "CONTACT",
       heading: "Book a free consultation",
-      sub: "Fill in the short form. You don't need to know what to automate. We'll work that out together in the free consultation. I'll reply within two business days.",
-      assurances: ["The consultation is free and non-binding", "You don't need to know what to automate", "I quote a price only after it"],
+      sub: "Write a few lines about your company and what slows it down. You don't need to know what to automate. I'll reply within two business days.",
+      assurances: ["The first consultation is free and non-binding"],
       form: {
         company: "Company name",
         companyPlaceholder: "E.g. Smith Ltd.",
