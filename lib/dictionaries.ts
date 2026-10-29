@@ -165,7 +165,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
     meta: {
       title: "4manek AI – automatizace, AI agenti a weby pro firmy",
       description:
-        "Jmenuji se Jonáš Formánek. Dělám firmám weby, automatizace a AI agenty, spravuji reklamy. První konzultace je zdarma, pak navrhnu řešení na míru.",
+        "4manek AI dělá firmám weby, automatizace a AI agenty a spravuje reklamy. První konzultace je zdarma, pak navrhneme řešení na míru.",
     },
     nav: {
       projects: "Projekty",
@@ -179,7 +179,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
     hero: {
       eyebrow: "AI STUDIO · AUTOMATIZACE · WEBY",
       headline: ["AUTOMATIZACE", "A WEBY, KTERÉ", "UŠETŘÍ PRÁCI."],
-      sub: "Stavím weby, automatizace a AI agenty a spravuji reklamy. Jsem jeden člověk, takže mluvíte přímo s tím, kdo to dělá. První konzultace je zdarma, pak pro vás připravím návrh na míru a podle něj pokračujeme.",
+      sub: "Zabýváme se weby, automatizací firemních procesů a AI agenty a spravujeme reklamy. První konzultace je zdarma, pak pro vás připravíme návrh na míru a podle něj pokračujeme.",
       ctaPrimary: "Domluvit bezplatnou konzultaci",
       ctaSecondary: "Projekty",
       trust: ["První konzultace zdarma · návrh na míru · odpovídám do dvou pracovních dnů"],
@@ -492,12 +492,12 @@ export const dictionaries: Record<Locale, Dictionary> = {
     },
     about: {
       eyebrow: "O MNĚ",
-      heading: "Jmenuji se Jonáš Formánek.",
-      role: "Student práv · zakladatel 4manek AI",
+      heading: "Jonáš Formánek",
+      role: "Zakladatel 4manek AI · student práv",
       body: [
-        "Jsem student práv. Umělá inteligence mě fascinuje od střední školy, kdy se stala dostupnou, a vždycky jsem se snažil s její pomocí ulehčit si práci.",
-        "Intenzivně jsem se jí začal věnovat během studia ve Finsku. Nejdřív jsem ji zkoušel na vlastních procesech, potom v rodinné firmě. Tam vznikla třeba automatizace dohledávání cen v B2B portálech.",
-        "Dnes tyto služby nabízím dalším firmám. Nejsem agentura, jsem jeden člověk, takže mluvíte přímo s tím, kdo řešení navrhuje a staví. Když něco nedává smysl, řeknu vám to dřív, než za to zaplatíte.",
+        "Jonáš Formánek je zakladatel 4manek AI a student práv. S umělou inteligencí experimentuje od střední školy, kdy se stala dostupnou, a od začátku ji využívá k ulehčení práce.",
+        "Naplno se jí věnuje od studia ve Finsku. Nejdřív se zkoušela na vlastních procesech, potom v rodinné firmě, kde vznikla třeba automatizace dohledávání cen v B2B portálech.",
+        "Dnes tyto služby 4manek AI nabízí dalším firmám. Když něco nedává smysl, uslyšíte to dřív, než za to zaplatíte.",
       ],
       photoAlt: "Jonáš Formánek",
     },
@@ -589,7 +589,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
     meta: {
       title: "4manek AI – automation, AI agents and websites for companies",
       description:
-        "I'm Jonáš Formánek. I build websites, automation and AI agents for companies and manage their ads. The first consultation is free, then I propose a solution tailored to you.",
+        "4manek AI builds websites, automation and AI agents for companies and manages their ads. The first consultation is free, then we propose a solution tailored to you.",
     },
     nav: {
       projects: "Projects",
@@ -603,7 +603,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
     hero: {
       eyebrow: "AI STUDIO · AUTOMATION · WEBSITES",
       headline: ["AUTOMATION AND", "WEBSITES THAT", "SAVE YOU WORK."],
-      sub: "I build websites, automation and AI agents, and I manage ads. I'm one person, so you talk directly to the one doing the work. The first consultation is free, then I prepare a proposal tailored to you and we carry on from there.",
+      sub: "We build websites, automate business processes, develop AI agents and manage ads. The first consultation is free, then we prepare a proposal tailored to you and carry on from there.",
       ctaPrimary: "Book a free consultation",
       ctaSecondary: "Projects",
       trust: ["First consultation free · tailored proposal · I reply within two business days"],
@@ -916,12 +916,12 @@ export const dictionaries: Record<Locale, Dictionary> = {
     },
     about: {
       eyebrow: "ABOUT",
-      heading: "My name is Jonáš Formánek.",
-      role: "Law student · founder of 4manek AI",
+      heading: "Jonáš Formánek",
+      role: "Founder of 4manek AI · law student",
       body: [
-        "I'm a law student. Artificial intelligence has fascinated me since high school, when it became available, and I've always tried to use it to make my work easier.",
-        "I started working with it intensively while studying in Finland. First I tried it on my own processes, then in the family business. That's where, for example, the automated price lookup across B2B portals came from.",
-        "Today I offer these services to other companies. I'm not an agency, I'm one person, so you talk directly to the person who designs and builds the solution. If something doesn't make sense, I'll tell you before you pay for it.",
+        "Jonáš Formánek is the founder of 4manek AI and a law student. Artificial intelligence has been a fascination since high school, when it became available, and Jonáš has always tried to use it to make work easier.",
+        "It became a serious focus during studies in Finland. It was tried first on internal processes, then in the family business, which is where the automated price lookup across B2B portals came from.",
+        "Today 4manek AI offers these services to other companies. If something doesn't make sense, you'll hear it before you pay for it.",
       ],
       photoAlt: "Jonáš Formánek",
     },
