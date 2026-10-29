@@ -165,7 +165,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
     meta: {
       title: "4manek AI – automatizace, AI agenti a weby pro firmy",
       description:
-        "4manek AI dělá firmám weby, automatizace a AI agenty a spravuje reklamy. První konzultace je zdarma, pak navrhneme řešení na míru.",
+        "4manek AI dělá firmám weby, automatizace, AI agenty a správu reklam. První konzultace je zdarma, pak navrhneme řešení na míru.",
     },
     nav: {
       projects: "Projekty",
@@ -179,7 +179,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
     hero: {
       eyebrow: "AI STUDIO · AUTOMATIZACE · WEBY",
       headline: ["AUTOMATIZACE", "A WEBY, KTERÉ", "UŠETŘÍ PRÁCI."],
-      sub: "Zabýváme se weby, automatizací firemních procesů a AI agenty a spravujeme reklamy. První konzultace je zdarma, pak pro vás připravíme návrh na míru a podle něj pokračujeme.",
+      sub: "Zabýváme se weby, automatizací firemních procesů, AI agenty a správou reklam. První konzultace je zdarma, pak pro vás připravíme návrh na míru a podle něj pokračujeme.",
       ctaPrimary: "Domluvit bezplatnou konzultaci",
       ctaSecondary: "Projekty",
       trust: ["První konzultace zdarma · návrh na míru · odpovídám do dvou pracovních dnů"],
