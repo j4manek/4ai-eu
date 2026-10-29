@@ -15,7 +15,7 @@ export default async function PrivacyPage({
 
   return (
     <>
-      <Nav dict={dict} locale={locale as Locale} />
+      <Nav dict={dict} locale={locale as Locale} subpage />
       <main className="mx-auto max-w-[800px] px-6 pb-28 pt-40 lg:px-12">
         <p className="font-mono text-[11px] uppercase tracking-wider text-ink-faint">
           {p.updated}

@@ -4,6 +4,7 @@ import { Nav } from "@/components/Nav";
 import { Hero } from "@/components/Hero";
 import { Projects } from "@/components/Projects";
 import { Services } from "@/components/Services";
+import { ProductsTeaser } from "@/components/ProductsTeaser";
 import { Process } from "@/components/Process";
 import { Ads } from "@/components/Ads";
 import { Benefits } from "@/components/Benefits";
@@ -31,6 +32,7 @@ export default async function HomePage({
         <Projects dict={dict} />
         <AiPractice dict={dict} />
         <Services dict={dict} />
+        <ProductsTeaser locale={locale as Locale} />
         <Ads dict={dict} />
         <Process dict={dict} />
         <About dict={dict} />

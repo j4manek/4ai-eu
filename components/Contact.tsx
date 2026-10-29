@@ -4,10 +4,19 @@ import { useState, type FormEvent } from "react";
 import type { Dictionary, Locale } from "@/lib/dictionaries";
 import { Reveal } from "./Reveal";
 import { trackAdsConversion, trackEvent } from "@/lib/analytics";
+import { submitForm } from "@/lib/submit";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
-export function Contact({ dict, locale }: { dict: Dictionary; locale: Locale }) {
+export function Contact({
+  dict,
+  locale,
+  topic = "general",
+}: {
+  dict: Dictionary;
+  locale: Locale;
+  topic?: "general" | "training";
+}) {
   const [status, setStatus] = useState<Status>("idle");
   const f = dict.contact.form;
 
@@ -18,25 +27,14 @@ export function Contact({ dict, locale }: { dict: Dictionary; locale: Locale }) 
     const form = e.currentTarget;
     const data = Object.fromEntries(new FormData(form).entries());
 
-    // GitHub Pages is a static export — there is no server to run /api/contact,
-    // so that build routes submissions through FormSubmit.co instead (set via
-    // NEXT_PUBLIC_CONTACT_FORM_EMAIL). Any other deploy (Vercel, `next start`)
-    // keeps using the local Resend-backed API route.
-    const formsubmitEmail = process.env.NEXT_PUBLIC_CONTACT_FORM_EMAIL;
-    const endpoint =
-      process.env.NEXT_PUBLIC_GITHUB_PAGES === "true" && formsubmitEmail
-        ? `https://formsubmit.co/ajax/${formsubmitEmail}`
-        : "/api/contact";
-
     try {
-      const res = await fetch(endpoint, {
-        method: "POST",
-        headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify({ ...data, _subject: `Nová poptávka od ${data.company}` }),
+      await submitForm({
+        ...data,
+        topic,
+        _subject: `Nová poptávka${topic === "training" ? " (školení)" : ""} od ${data.company}`,
       });
-      if (!res.ok) throw new Error("request failed");
       setStatus("success");
-      trackEvent("generate_lead", { method: "contact_form" });
+      trackEvent("generate_lead", { method: "contact_form", topic });
       trackAdsConversion();
       form.reset();
     } catch {

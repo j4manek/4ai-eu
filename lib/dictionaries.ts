@@ -217,13 +217,13 @@ export const dictionaries: Record<Locale, Dictionary> = {
         items: [
           {
             status: "V provozu",
-            title: "Instalatérství Janák",
+            title: "Instalatérství Janak",
             hook: "Aby lidé, kteří hledají instalatéra, zavolali. A abychom věděli, kolik jich zavolalo.",
             description:
               "Web instalatérské firmy pro Královéhradecký a Pardubický kraj. Stránky služeb, mimo jiné pro bytové domy a SVJ, poptávkové formuláře a měření telefonátů a poptávek pro Google Ads.",
             tags: ["Web na míru", "Formuláře", "GA4 + Google Ads"],
             image: "janak.jpg",
-            imageAlt: "Úvodní stránka webu Instalatérství Janák",
+            imageAlt: "Úvodní stránka webu Instalatérství Janak",
             href: "https://instalaterstvi-janak.cz",
             hrefLabel: "instalaterstvi-janak.cz",
           },
@@ -529,7 +529,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
     footer: {
       tagline: "AI, automatizace, weby a reklama pro firmy.",
       rights: "Všechna práva vyhrazena.",
-      email: "jony.form@seznam.cz",
+      email: "ai@4manek.cz",
       privacyLink: "Zásady ochrany osobních údajů",
     },
     privacy: {
@@ -542,7 +542,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
           heading: "1. Správce osobních údajů",
           body: [
             "Jonáš Formánek, IČO: (doplním)",
-            "Kontaktní e-mail: jony.form@seznam.cz",
+            "Kontaktní e-mail: ai@4manek.cz",
           ],
         },
         {
@@ -578,7 +578,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
         {
           heading: "7. Vaše práva",
           body: [
-            "Máte právo na přístup ke svým údajům, jejich opravu, výmaz, omezení zpracování, přenositelnost a právo vznést námitku. Kdykoliv nás můžete kontaktovat na jony.form@seznam.cz. Pokud se domníváte, že údaje zpracováváme v rozporu s právními předpisy, máte právo podat stížnost u Úřadu pro ochranu osobních údajů (uoou.cz).",
+            "Máte právo na přístup ke svým údajům, jejich opravu, výmaz, omezení zpracování, přenositelnost a právo vznést námitku. Kdykoliv nás můžete kontaktovat na ai@4manek.cz. Pokud se domníváte, že údaje zpracováváme v rozporu s právními předpisy, máte právo podat stížnost u Úřadu pro ochranu osobních údajů (uoou.cz).",
           ],
         },
       ],
@@ -640,13 +640,13 @@ export const dictionaries: Record<Locale, Dictionary> = {
         items: [
           {
             status: "Live",
-            title: "Instalatérství Janák",
+            title: "Instalatérství Janak",
             hook: "So people looking for a plumber pick up the phone. And so we know how many did.",
             description:
               "The website of a plumbing company serving two Czech regions. Service pages including apartment buildings and homeowners' associations (SVJ), enquiry forms, and tracking of calls and enquiries for Google Ads.",
             tags: ["Custom site", "Forms", "GA4 + Google Ads"],
             image: "janak.jpg",
-            imageAlt: "Homepage of the Instalatérství Janák website",
+            imageAlt: "Homepage of the Instalatérství Janak website",
             href: "https://instalaterstvi-janak.cz",
             hrefLabel: "instalaterstvi-janak.cz",
           },
@@ -952,7 +952,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
     footer: {
       tagline: "AI, automation, websites and advertising for companies.",
       rights: "All rights reserved.",
-      email: "jony.form@seznam.cz",
+      email: "ai@4manek.cz",
       privacyLink: "Privacy Policy",
     },
     privacy: {
@@ -965,7 +965,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
           heading: "1. Data controller",
           body: [
             "Jonáš Formánek, Company ID (IČO): (to be added)",
-            "Contact email: jony.form@seznam.cz",
+            "Contact email: ai@4manek.cz",
           ],
         },
         {
@@ -1001,7 +1001,7 @@ export const dictionaries: Record<Locale, Dictionary> = {
         {
           heading: "7. Your rights",
           body: [
-            "You have the right to access, correct or erase your data, to restrict its processing, to data portability, and to object to it. You can contact us at any time at jony.form@seznam.cz. If you believe your data has been processed unlawfully, you may file a complaint with the Czech Office for Personal Data Protection (uoou.cz).",
+            "You have the right to access, correct or erase your data, to restrict its processing, to data portability, and to object to it. You can contact us at any time at ai@4manek.cz. If you believe your data has been processed unlawfully, you may file a complaint with the Czech Office for Personal Data Protection (uoou.cz).",
           ],
         },
       ],
