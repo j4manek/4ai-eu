@@ -27,9 +27,6 @@ export function Benefits({ dict }: { dict: Dictionary }) {
             </Reveal>
           ))}
         </div>
-        <Reveal className="mt-6">
-          <p className="border-l-2 border-signal/60 pl-4 text-sm text-ink-dim">{b.note}</p>
-        </Reveal>
       </div>
     </section>
   );
