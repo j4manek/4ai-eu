@@ -159,9 +159,30 @@ body {
 
 /* Logo morph: 4manek AI <-> 4AI. One 5s loop; letters and the width share the same timeline. */
 .brand-morph {
+  position: relative;
   display: inline-flex;
   align-items: baseline;
   white-space: pre;
+}
+
+/* Rings around the short form: a steady one that fades in, and one that pulses outward twice. */
+.brand-morph::before,
+.brand-morph::after {
+  content: "";
+  position: absolute;
+  inset: -0.3em -0.55em;
+  border: 1.5px solid var(--color-accent);
+  border-radius: 999px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.brand-morph::before {
+  animation: brand-ring 5s infinite;
+}
+
+.brand-morph::after {
+  animation: brand-ping 5s infinite;
 }
 
 .brand-tail {
@@ -198,6 +219,20 @@ body {
   0%, 26% { opacity: 1; transform: none; filter: blur(0); animation-timing-function: ease-in; }
   36%, 62% { opacity: 0; transform: translateY(-0.5em) scale(0.5); filter: blur(4px); animation-timing-function: ease-out; }
   72%, 100% { opacity: 1; transform: none; filter: blur(0); }
+}
+
+@keyframes brand-ring {
+  0%, 38% { opacity: 0; transform: scale(0.6); animation-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1); }
+  46%, 60% { opacity: 0.85; transform: scale(1); animation-timing-function: ease-in; }
+  70%, 100% { opacity: 0; transform: scale(0.8); }
+}
+
+@keyframes brand-ping {
+  0%, 43% { opacity: 0; transform: scale(1); }
+  44% { opacity: 0.7; transform: scale(1); animation-timing-function: ease-out; }
+  52% { opacity: 0; transform: scale(1.6); }
+  53% { opacity: 0.7; transform: scale(1); animation-timing-function: ease-out; }
+  61%, 100% { opacity: 0; transform: scale(1.6); }
 }
 
 @keyframes brand-ai {
