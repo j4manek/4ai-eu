@@ -56,9 +56,9 @@ const cs: ProductsCopy = {
   navLabel: "Školení",
   teaser: {
     eyebrow: "ŠKOLENÍ A KURZ",
-    heading: "Naučím vás i váš tým pracovat s AI",
+    heading: "Naučíme vás i váš tým pracovat s AI",
     intro:
-      "AI se vyplatí, jen když ji lidé skutečně používají. Nabízím dvě cesty: školení přímo ve firmě a digitální kurz pro jednotlivce.",
+      "AI se vyplatí, jen když ji lidé skutečně používají. Nabízíme dvě cesty: školení přímo ve firmě a digitální kurz pro jednotlivce.",
     training: {
       badge: "Pro firmy",
       title: "Školení AI pro firmy a týmy",
@@ -67,7 +67,7 @@ const cs: ProductsCopy = {
       cta: "Zjistit víc o školení",
     },
     course: {
-      badge: "Připravuji",
+      badge: "Připravujeme",
       title: "Digitální kurz AI pro jednotlivce",
       text: "Praktický průvodce, kterým se naučíte používat AI v každodenní práci vlastním tempem.",
       points: ["Vlastní tempo, kdykoli", "Bez technického žargonu", "Šablony zadání k okamžitému použití"],
@@ -95,7 +95,7 @@ const cs: ProductsCopy = {
     },
     modules: {
       heading: "Co se na školení naučíte",
-      intro: "Obsah upravím podle oboru a rolí. Základ tvoří tyto okruhy.",
+      intro: "Obsah upravíme podle oboru a rolí. Základ tvoří tyto okruhy.",
       items: [
         { title: "Jak AI funguje a kde chybuje", text: "Co od ní čekat, proč si občas vymýšlí a jak to poznat dřív, než to skončí u zákazníka." },
         { title: "Zadání, která dávají použitelný výsledek", text: "Jak AI zadávat, aby odpověď nebylo nutné celou přepisovat." },
@@ -117,7 +117,7 @@ const cs: ProductsCopy = {
       heading: "Postup od první konzultace po školení",
       items: [
         { title: "Konzultace zdarma", description: "Probereme, čím se firma zabývá, kdo bude školen a co tým zdržuje." },
-        { title: "Příprava na míru", description: "Připravím cvičení z vašich skutečných situací, ne z učebnice." },
+        { title: "Příprava na míru", description: "Připravíme cvičení z vašich skutečných situací, ne z učebnice." },
         { title: "Školení", description: "Krátký výklad a hlavně praxe. Každý účastník si vše zkouší sám." },
         { title: "Po školení", description: "Dostanete podklady a ověřená zadání k dalšímu použití a můžete se na cokoli doptat." },
       ],
@@ -126,19 +126,19 @@ const cs: ProductsCopy = {
       eyebrow: "OTÁZKY",
       heading: "Časté otázky ke školení",
       items: [
-        { q: "Potřebují účastníci nějakou předchozí zkušenost?", a: "Ne. Školení přizpůsobím úrovni týmu, od úplných začátečníků po ty, kdo AI už zkoušejí." },
+        { q: "Potřebují účastníci nějakou předchozí zkušenost?", a: "Ne. Školení přizpůsobíme úrovni týmu, od úplných začátečníků po ty, kdo AI už zkoušejí." },
         { q: "S jakými nástroji se na školení pracuje?", a: "S těmi, které firma už používá nebo chce používat. Nástroje vybereme společně podle toho, jaká máte pravidla pro práci s daty." },
-        { q: "Kolik školení stojí?", a: "Cenu navrhnu po bezplatné konzultaci podle počtu lidí, rozsahu a formy. Žádná pevná cena z ceníku neexistuje, protože každé školení se liší." },
+        { q: "Kolik školení stojí?", a: "Cenu navrhneme po bezplatné konzultaci podle počtu lidí, rozsahu a formy. Žádná pevná cena z ceníku neexistuje, protože každé školení se liší." },
         { q: "Jak dlouho školení trvá?", a: "Podle zadání. Typicky od půl dne po celý den, případně jako série kratších setkání." },
-        { q: "Dá se po školení pokračovat?", a: "Ano. Pokud z workshopu vyjde, co se vyplatí automatizovat, mohu to navázat stavbou automatizace nebo AI agenta." },
-        { q: "A školíte i jednotlivce?", a: "Pro jednotlivce připravuji digitální kurz. Můžete si nechat napsat, až bude hotový." },
+        { q: "Dá se po školení pokračovat?", a: "Ano. Pokud z workshopu vyjde, co se vyplatí automatizovat, můžeme to navázat stavbou automatizace nebo AI agenta." },
+        { q: "A školíte i jednotlivce?", a: "Pro jednotlivce připravujeme digitální kurz. Můžete si nechat napsat, až bude hotový." },
       ],
     },
     contact: {
       eyebrow: "POPTÁVKA ŠKOLENÍ",
       heading: "Domluvte si školení pro svůj tým",
-      sub: "Napište, kdo by měl být proškolen a co chcete, aby tým po školení zvládal. Ozvu se do dvou pracovních dnů.",
-      assurances: ["Konzultace je zdarma a nezávazná", "Obsah upravím podle vašeho oboru", "Cenu navrhuji až po konzultaci"],
+      sub: "Napište, kdo by měl být proškolen a co chcete, aby tým po školení zvládal. Ozveme se do dvou pracovních dnů.",
+      assurances: ["Konzultace je zdarma a nezávazná", "Obsah upravíme podle vašeho oboru", "Cenu navrhujeme až po konzultaci"],
       messagePlaceholder: "Kolik lidí, jaké role, co by měli po školení umět. Pokud nevíte, nevadí, doladíme to na konzultaci.",
     },
   },
@@ -146,13 +146,13 @@ const cs: ProductsCopy = {
     meta: {
       title: "AI v práci: digitální kurz pro jednotlivce | 4manek AI",
       description:
-        "Praktický digitální kurz, jak používat umělou inteligenci v každodenní práci. Připravuji. Zanechte e-mail a dám vám vědět jako prvnímu.",
+        "Praktický digitální kurz, jak používat umělou inteligenci v každodenní práci. Připravujeme. Zanechte e-mail a dáme vám vědět jako prvním.",
     },
     eyebrow: "DIGITÁLNÍ KURZ",
-    badge: "Připravuji",
+    badge: "Připravujeme",
     headline: "AI v práci: praktický průvodce pro každého",
     sub: "Digitální kurz pro ty, kdo chtějí AI používat každý den, ne jen zkoušet. Krok za krokem, bez technického žargonu.",
-    cta: "Dát mi vědět o spuštění",
+    cta: "Dát nám vědět o spuštění",
     inside: {
       heading: "Co v kurzu bude",
       items: [
@@ -174,8 +174,8 @@ const cs: ProductsCopy = {
     },
     waitlist: {
       eyebrow: "SEZNAM ZÁJEMCŮ",
-      heading: "Dejte mi vědět, až bude kurz hotový",
-      sub: "Zanechte e-mail. Napíšu vám, jakmile bude kurz k dispozici. Nezavazuje vás to k ničemu.",
+      heading: "Dejte nám vědět, až bude kurz hotový",
+      sub: "Zanechte e-mail. Napíšeme vám, jakmile bude kurz k dispozici. Nezavazuje vás to k ničemu.",
       name: "Jméno (nepovinné)",
       namePlaceholder: "Jak vás mám oslovit",
       email: "E-mail",
@@ -183,18 +183,18 @@ const cs: ProductsCopy = {
       consent: "Odesláním beru na vědomí zpracování údajů podle",
       consentLink: "zásad ochrany osobních údajů",
       submit: "Zapsat se",
-      submitting: "Zapisuji…",
-      success: "Děkuji, jste na seznamu. Ozvu se, jakmile bude kurz k dispozici.",
+      submitting: "Zapisujeme…",
+      success: "Děkujeme, jste na seznamu. Ozveme se, jakmile bude kurz k dispozici.",
       error: "Něco se pokazilo. Zkuste to prosím znovu, nebo napište přímo na e-mail v patičce.",
     },
     faq: {
       eyebrow: "OTÁZKY",
       heading: "Časté otázky ke kurzu",
       items: [
-        { q: "Kdy bude kurz k dispozici?", a: "Pevné datum zatím nemám. Kdo je na seznamu, dozví se to jako první." },
+        { q: "Kdy bude kurz k dispozici?", a: "Pevné datum zatím nemáme. Kdo je na seznamu, dozví se to jako první." },
         { q: "Kolik bude kurz stát?", a: "Cena zatím není stanovená. Zapsání na seznam k ničemu nezavazuje." },
         { q: "Je to i pro firmy?", a: "Firmy a týmy mohou využít školení přímo ve firmě, které se přizpůsobuje oboru a rolím." },
-        { q: "Bude kurz v češtině?", a: "Ano, kurz připravuji v češtině." },
+        { q: "Bude kurz v češtině?", a: "Ano, kurz připravujeme v češtině." },
       ],
     },
   },
@@ -204,9 +204,9 @@ const en: ProductsCopy = {
   navLabel: "Training",
   teaser: {
     eyebrow: "TRAINING & COURSE",
-    heading: "I will teach you and your team to work with AI",
+    heading: "We will teach you and your team to work with AI",
     intro:
-      "AI only pays off when people actually use it. I offer two ways: training inside your company and a digital course for individuals.",
+      "AI only pays off when people actually use it. We offer two ways: training inside your company and a digital course for individuals.",
     training: {
       badge: "For companies",
       title: "AI training for companies and teams",
@@ -243,7 +243,7 @@ const en: ProductsCopy = {
     },
     modules: {
       heading: "What you will learn",
-      intro: "I adapt the content to your industry and roles. These topics form the core.",
+      intro: "We adapt the content to your industry and roles. These topics form the core.",
       items: [
         { title: "How AI works and where it fails", text: "What to expect, why it sometimes makes things up, and how to spot it before it reaches a customer." },
         { title: "Prompts that give usable results", text: "How to instruct AI so you do not have to rewrite the whole answer." },
@@ -265,7 +265,7 @@ const en: ProductsCopy = {
       heading: "From first consultation to training day",
       items: [
         { title: "Free consultation", description: "We discuss what the company does, who will be trained and what slows the team down." },
-        { title: "Tailored preparation", description: "I prepare exercises from your real situations, not from a textbook." },
+        { title: "Tailored preparation", description: "We prepare exercises from your real situations, not from a textbook." },
         { title: "The training", description: "A short explanation and mostly practice. Every participant tries it themselves." },
         { title: "Afterwards", description: "You receive materials and proven prompts to reuse, and you can ask follow-up questions." },
       ],
@@ -274,18 +274,18 @@ const en: ProductsCopy = {
       eyebrow: "QUESTIONS",
       heading: "Training FAQ",
       items: [
-        { q: "Do participants need prior experience?", a: "No. I adapt the training to the team's level, from complete beginners to people already experimenting with AI." },
+        { q: "Do participants need prior experience?", a: "No. We adapt the training to the team's level, from complete beginners to people already experimenting with AI." },
         { q: "Which tools do we work with?", a: "The ones your company already uses or wants to use. We choose them together based on your rules for handling data." },
-        { q: "How much does it cost?", a: "I propose a price after the free consultation based on headcount, scope and format. There is no fixed price list because every training differs." },
+        { q: "How much does it cost?", a: "We propose a price after the free consultation based on headcount, scope and format. There is no fixed price list because every training differs." },
         { q: "How long does it take?", a: "Depending on the brief. Typically half a day to a full day, or a series of shorter sessions." },
-        { q: "Can we continue afterwards?", a: "Yes. If the workshop shows what is worth automating, I can follow up by building the automation or an AI agent." },
-        { q: "Do you train individuals too?", a: "For individuals I am preparing a digital course. You can leave your email and be notified when it is ready." },
+        { q: "Can we continue afterwards?", a: "Yes. If the workshop shows what is worth automating, we can follow up by building the automation or an AI agent." },
+        { q: "Do you train individuals too?", a: "For individuals we are preparing a digital course. You can leave your email and be notified when it is ready." },
       ],
     },
     contact: {
       eyebrow: "TRAINING INQUIRY",
       heading: "Book a training for your team",
-      sub: "Tell me who should be trained and what you want the team to be able to do afterwards. I will get back to you within two working days.",
+      sub: "Tell us who should be trained and what you want the team to be able to do afterwards. We will get back to you within two working days.",
       assurances: ["The consultation is free and non-binding", "Content adapted to your industry", "Price proposed only after the consultation"],
       messagePlaceholder: "How many people, which roles, what they should be able to do afterwards. If you are unsure, we will work it out during the consultation.",
     },
@@ -294,7 +294,7 @@ const en: ProductsCopy = {
     meta: {
       title: "AI at Work: digital course for individuals | 4manek AI",
       description:
-        "A practical digital course on using AI in daily work. In preparation. Leave your email and I will let you know first.",
+        "A practical digital course on using AI in daily work. In preparation. Leave your email and we will let you know first.",
     },
     eyebrow: "DIGITAL COURSE",
     badge: "In preparation",
@@ -322,24 +322,24 @@ const en: ProductsCopy = {
     },
     waitlist: {
       eyebrow: "WAITLIST",
-      heading: "Let me know when the course is ready",
-      sub: "Leave your email. I will write to you as soon as the course is available. It does not commit you to anything.",
+      heading: "Let us know when the course is ready",
+      sub: "Leave your email. We will write to you as soon as the course is available. It does not commit you to anything.",
       name: "Name (optional)",
-      namePlaceholder: "How should I address you",
+      namePlaceholder: "How should we address you",
       email: "Email",
       emailPlaceholder: "you@email.com",
       consent: "By submitting I acknowledge the processing of my data according to the",
       consentLink: "privacy policy",
       submit: "Join the waitlist",
       submitting: "Signing up…",
-      success: "Thank you, you are on the list. I will be in touch as soon as the course is available.",
+      success: "Thank you, you are on the list. We will be in touch as soon as the course is available.",
       error: "Something went wrong. Please try again or write to the email in the footer.",
     },
     faq: {
       eyebrow: "QUESTIONS",
       heading: "Course FAQ",
       items: [
-        { q: "When will the course be available?", a: "I do not have a fixed date yet. People on the list will hear first." },
+        { q: "When will the course be available?", a: "We do not have a fixed date yet. People on the list will hear first." },
         { q: "How much will it cost?", a: "The price has not been set yet. Joining the list commits you to nothing." },
         { q: "Is it for companies too?", a: "Companies and teams can use the on-site training, which is tailored to the industry and roles." },
         { q: "Which language is the course in?", a: "The course is being prepared in Czech." },
