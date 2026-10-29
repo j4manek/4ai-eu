@@ -39,12 +39,21 @@ export async function POST(request: Request) {
   const invalid = () => NextResponse.json({ ok: false, error: "invalid_payload" }, { status: 400 });
 
   if (body && body.topic === "course-waitlist") {
-    if (typeof body.email !== "string" || !EMAIL_RE.test(body.email)) return invalid();
-    const name = typeof body.name === "string" ? body.name.trim() : "";
+    const { name, email, phone } = body as Record<string, unknown>;
+    if (
+      typeof name !== "string" ||
+      typeof phone !== "string" ||
+      typeof email !== "string" ||
+      !name.trim() ||
+      !phone.trim() ||
+      !EMAIL_RE.test(email)
+    ) {
+      return invalid();
+    }
     return deliver(
       "Nový zájemce o digitální kurz",
-      body.email,
-      `Seznam zájemců o kurz\nJméno: ${name || "(neuvedeno)"}\nEmail: ${body.email}`
+      email,
+      `Seznam zájemců o kurz\nJméno: ${name}\nEmail: ${email}\nTelefon: ${phone}`
     );
   }
 

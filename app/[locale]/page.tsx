@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import { locales, getDictionary, type Locale } from "@/lib/dictionaries";
+import { getProducts, productSlugs } from "@/lib/products";
 import { Nav } from "@/components/Nav";
 import { Hero } from "@/components/Hero";
 import { Projects } from "@/components/Projects";
@@ -27,7 +28,10 @@ export default async function HomePage({
     <>
       <Nav dict={dict} locale={locale as Locale} />
       <main>
-        <Hero dict={dict} />
+        <Hero
+          dict={dict}
+          course={{ href: `/${locale}/${productSlugs.course}/`, label: getProducts(locale as Locale).heroCourseCta }}
+        />
         <Benefits dict={dict} />
         <Projects dict={dict} />
         <AiPractice dict={dict} />

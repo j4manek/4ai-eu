@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
 import type { Dictionary } from "@/lib/dictionaries";
 import { HeroIllustration } from "./HeroIllustration";
@@ -24,7 +25,7 @@ const fade = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] as const } },
 };
 
-export function Hero({ dict }: { dict: Dictionary }) {
+export function Hero({ dict, course }: { dict: Dictionary; course: { href: string; label: string } }) {
   return (
     <section className="relative flex min-h-[100svh] flex-col overflow-hidden pt-24 pb-12 sm:pb-16">
       <HeroIllustration />
@@ -87,6 +88,13 @@ export function Hero({ dict }: { dict: Dictionary }) {
           >
             {dict.hero.ctaSecondary}
           </a>
+          <Link
+            href={course.href}
+            className="group inline-flex w-full items-center justify-center gap-2 rounded-full border border-signal/60 px-7 py-4 font-mono text-[12px] uppercase tracking-wider text-signal transition-colors hover:bg-signal/10 sm:w-auto"
+          >
+            {course.label}
+            <span className="transition-transform group-hover:translate-x-1">→</span>
+          </Link>
         </motion.div>
 
         <motion.ul variants={fade} className="mt-10 flex flex-wrap gap-x-6 gap-y-2">

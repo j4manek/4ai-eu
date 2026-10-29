@@ -19,10 +19,12 @@ export function Nav({
   // On subpages the section anchors live on the home page, so they need the locale prefix.
   const prefix = subpage ? `/${locale}/` : "";
   const cta = ctaHref ?? `${prefix}#contact`;
+  const products = getProducts(locale);
   const links = [
     { href: `${prefix}#projects`, label: dict.nav.projects },
     { href: `${prefix}#services`, label: dict.nav.services },
-    { href: `/${locale}/${productSlugs.training}/`, label: getProducts(locale).navLabel },
+    { href: `/${locale}/${productSlugs.training}/`, label: products.navLabel },
+    { href: `/${locale}/${productSlugs.course}/`, label: products.courseNavLabel },
     { href: `${prefix}#process`, label: dict.nav.process },
     { href: `${prefix}#faq`, label: dict.nav.faq },
     { href: `${prefix}#contact`, label: dict.nav.contact },

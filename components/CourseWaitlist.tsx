@@ -49,11 +49,15 @@ export function CourseWaitlist({ copy: w, locale }: { copy: ProductsCopy["course
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
               <label className="flex flex-col gap-2">
                 <span className={label}>{w.name}</span>
-                <input name="name" type="text" autoComplete="given-name" placeholder={w.namePlaceholder} className={field} />
+                <input required name="name" type="text" autoComplete="name" placeholder={w.namePlaceholder} className={field} />
               </label>
               <label className="flex flex-col gap-2">
                 <span className={label}>{w.email}</span>
                 <input required name="email" type="email" autoComplete="email" placeholder={w.emailPlaceholder} className={field} />
+              </label>
+              <label className="flex flex-col gap-2">
+                <span className={label}>{w.phone}</span>
+                <input required name="phone" type="tel" autoComplete="tel" placeholder={w.phonePlaceholder} className={field} />
               </label>
             </div>
 

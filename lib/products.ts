@@ -4,6 +4,8 @@ type Item = { title: string; text: string };
 
 export interface ProductsCopy {
   navLabel: string;
+  courseNavLabel: string;
+  heroCourseCta: string;
   teaser: {
     eyebrow: string;
     heading: string;
@@ -40,6 +42,8 @@ export interface ProductsCopy {
       sub: string;
       name: string;
       namePlaceholder: string;
+      phone: string;
+      phonePlaceholder: string;
       email: string;
       emailPlaceholder: string;
       consent: string;
@@ -55,11 +59,13 @@ export interface ProductsCopy {
 
 const cs: ProductsCopy = {
   navLabel: "Školení",
+  courseNavLabel: "Kurz",
+  heroCourseCta: "Digitální kurz AI",
   teaser: {
     eyebrow: "ŠKOLENÍ A KURZ",
     heading: "Naučíme vás i váš tým pracovat s AI",
     intro:
-      "AI se vyplatí, jen když ji lidé skutečně používají. Nabízíme dvě cesty: školení přímo ve firmě a online kurz pro jednotlivce.",
+      "AI se vyplatí, jen když ji lidé skutečně používají. Nabízíme dvě cesty: školení přímo ve firmě a digitální kurz AI.",
     training: {
       badge: "Pro firmy",
       title: "Školení AI pro firmy a týmy",
@@ -69,8 +75,8 @@ const cs: ProductsCopy = {
     },
     course: {
       badge: "Připravujeme",
-      title: "Rychlý online kurz AI",
-      text: "Praktický online kurz, ve kterém se naučíte používat AI v každodenní práci. Cena 20 000 Kč bez DPH.",
+      title: "Digitální kurz AI",
+      text: "Praktický digitální kurz, ve kterém se naučíte používat AI v každodenní práci. Cena 20 000 Kč bez DPH.",
       points: ["Rychle, krok za krokem, vlastním tempem", "Bez technického žargonu", "Šablony zadání k okamžitému použití"],
       cta: "Dát vědět o spuštění",
     },
@@ -133,7 +139,7 @@ const cs: ProductsCopy = {
         { q: "Jak dlouho školení trvá?", a: "Podle zadání, od jednodenních po několikadenní. Délku navrhneme podle velikosti týmu a toho, co chcete zvládnout." },
         { q: "Dá se na školení získat dotace?", a: "U vícedenních školení je možné získat příspěvek z dotací. Podmínky závisí na konkrétním dotačním programu a firmě, probereme je na konzultaci." },
         { q: "Dá se po školení pokračovat?", a: "Ano. Pokud z workshopu vyjde, co se vyplatí automatizovat, můžeme to navázat stavbou automatizace nebo AI agenta." },
-        { q: "A školíte i jednotlivce?", a: "Pro jednotlivce připravujeme online kurz. Můžete si nechat napsat, až bude hotový." },
+        { q: "Máte i digitální kurz?", a: "Ano, připravujeme digitální kurz AI. Můžete si nechat napsat, až bude hotový." },
       ],
     },
     contact: {
@@ -146,14 +152,14 @@ const cs: ProductsCopy = {
   },
   course: {
     meta: {
-      title: "AI v práci: rychlý online kurz | 4manek AI",
+      title: "AI v práci: digitální kurz AI | 4manek AI",
       description:
-        "Rychlý online kurz, jak používat umělou inteligenci v každodenní práci. Cena 20 000 Kč bez DPH. Připravujeme. Zanechte e-mail a dáme vám vědět jako prvním.",
+        "Rychlý digitální kurz, jak používat umělou inteligenci v každodenní práci. Cena 20 000 Kč bez DPH. Připravujeme. Zanechte e-mail a dáme vám vědět jako prvním.",
     },
-    eyebrow: "ONLINE KURZ",
+    eyebrow: "DIGITÁLNÍ KURZ",
     badge: "Připravujeme",
-    headline: "AI v práci: rychlý online kurz pro každého",
-    sub: "Praktický online kurz pro ty, kdo chtějí AI používat každý den, ne jen zkoušet. Rychle, krok za krokem a bez technického žargonu.",
+    headline: "AI v práci: rychlý digitální kurz",
+    sub: "Praktický digitální kurz pro všechny, kdo chtějí AI používat každý den, ne jen zkoušet. Rychle, krok za krokem a bez technického žargonu.",
     cta: "Dát nám vědět o spuštění",
     price: "Cena kurzu: 20 000 Kč bez DPH",
     inside: {
@@ -178,9 +184,11 @@ const cs: ProductsCopy = {
     waitlist: {
       eyebrow: "SEZNAM ZÁJEMCŮ",
       heading: "Dejte nám vědět, až bude kurz hotový",
-      sub: "Zanechte e-mail. Napíšeme vám, jakmile bude kurz k dispozici. Nezavazuje vás to k ničemu.",
-      name: "Jméno (nepovinné)",
-      namePlaceholder: "Jak vás mám oslovit",
+      sub: "Zanechte nám kontakt. Ozveme se vám, jakmile bude kurz k dispozici. Nezavazuje vás to k ničemu.",
+      name: "Jméno",
+      namePlaceholder: "Jméno a příjmení",
+      phone: "Telefon",
+      phonePlaceholder: "+420 …",
       email: "E-mail",
       emailPlaceholder: "vy@email.cz",
       consent: "Odesláním beru na vědomí zpracování údajů podle",
@@ -196,7 +204,7 @@ const cs: ProductsCopy = {
       items: [
         { q: "Kdy bude kurz k dispozici?", a: "Pevné datum zatím nemáme. Kdo je na seznamu, dozví se to jako první." },
         { q: "Kolik kurz stojí?", a: "Cena kurzu je 20 000 Kč bez DPH. Zapsání na seznam zájemců k ničemu nezavazuje." },
-        { q: "Je to i pro firmy?", a: "Firmy a týmy mohou využít školení přímo ve firmě, které se přizpůsobuje oboru a rolím." },
+        { q: "Je to i pro firmy?", a: "Ano, kurz se hodí i pro zaměstnance firem. Pro celý tým nabízíme navíc školení přímo ve firmě, přizpůsobené oboru a rolím." },
         { q: "Bude kurz v češtině?", a: "Ano, kurz připravujeme v češtině." },
       ],
     },
@@ -205,11 +213,13 @@ const cs: ProductsCopy = {
 
 const en: ProductsCopy = {
   navLabel: "Training",
+  courseNavLabel: "Course",
+  heroCourseCta: "Digital AI course",
   teaser: {
     eyebrow: "TRAINING & COURSE",
     heading: "We will teach you and your team to work with AI",
     intro:
-      "AI only pays off when people actually use it. We offer two ways: training inside your company and a quick online course for individuals.",
+      "AI only pays off when people actually use it. We offer two ways: training inside your company and a digital AI course.",
     training: {
       badge: "For companies",
       title: "AI training for companies and teams",
@@ -219,8 +229,8 @@ const en: ProductsCopy = {
     },
     course: {
       badge: "In preparation",
-      title: "Quick online AI course",
-      text: "A practical online course on using AI in your daily work. Price CZK 20,000 excl. VAT.",
+      title: "Digital AI course",
+      text: "A practical digital course on using AI in your daily work. Price CZK 20,000 excl. VAT.",
       points: ["Quick, step by step, at your own pace", "No technical jargon", "Ready-to-use prompt templates"],
       cta: "Notify me at launch",
     },
@@ -283,7 +293,7 @@ const en: ProductsCopy = {
         { q: "How long does it take?", a: "Depending on the brief, from one day to several days. We propose the length based on team size and what you want to achieve." },
         { q: "Can we get a subsidy for the training?", a: "For multi-day training, a subsidy contribution is possible. Conditions depend on the specific subsidy programme and the company; we will go through them during the consultation." },
         { q: "Can we continue afterwards?", a: "Yes. If the workshop shows what is worth automating, we can follow up by building the automation or an AI agent." },
-        { q: "Do you train individuals too?", a: "For individuals we are preparing an online course. You can leave your email and be notified when it is ready." },
+        { q: "Do you have a digital course?", a: "Yes, we are preparing a digital AI course. You can leave your email and be notified when it is ready." },
       ],
     },
     contact: {
@@ -296,14 +306,14 @@ const en: ProductsCopy = {
   },
   course: {
     meta: {
-      title: "AI at Work: quick online course | 4manek AI",
+      title: "AI at Work: digital AI course | 4manek AI",
       description:
-        "A quick online course on using AI in daily work. Price CZK 20,000 excl. VAT. In preparation. Leave your email and we will let you know first.",
+        "A quick digital course on using AI in daily work. Price CZK 20,000 excl. VAT. In preparation. Leave your email and we will let you know first.",
     },
-    eyebrow: "ONLINE COURSE",
+    eyebrow: "DIGITAL COURSE",
     badge: "In preparation",
-    headline: "AI at Work: a quick online course for everyone",
-    sub: "A practical online course for people who want to use AI every day, not just try it out. Quick, step by step and without technical jargon.",
+    headline: "AI at Work: a quick digital course",
+    sub: "A practical digital course for everyone who wants to use AI every day, not just try it out. Quick, step by step and without technical jargon.",
     cta: "Notify me at launch",
     price: "Course price: CZK 20,000 excl. VAT",
     inside: {
@@ -328,9 +338,11 @@ const en: ProductsCopy = {
     waitlist: {
       eyebrow: "WAITLIST",
       heading: "Let us know when the course is ready",
-      sub: "Leave your email. We will write to you as soon as the course is available. It does not commit you to anything.",
-      name: "Name (optional)",
-      namePlaceholder: "How should we address you",
+      sub: "Leave us your contact. We will get in touch as soon as the course is available. It does not commit you to anything.",
+      name: "Name",
+      namePlaceholder: "Full name",
+      phone: "Phone",
+      phonePlaceholder: "+420 …",
       email: "Email",
       emailPlaceholder: "you@email.com",
       consent: "By submitting I acknowledge the processing of my data according to the",
@@ -346,7 +358,7 @@ const en: ProductsCopy = {
       items: [
         { q: "When will the course be available?", a: "We do not have a fixed date yet. People on the list will hear first." },
         { q: "How much does the course cost?", a: "The course costs CZK 20,000 excl. VAT. Joining the waitlist commits you to nothing." },
-        { q: "Is it for companies too?", a: "Companies and teams can use the on-site training, which is tailored to the industry and roles." },
+        { q: "Is it for companies too?", a: "Yes, the course also suits company employees. For a whole team we also offer training at your company, tailored to the industry and roles." },
         { q: "Which language is the course in?", a: "The course is being prepared in Czech." },
       ],
     },

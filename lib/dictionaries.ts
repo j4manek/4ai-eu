@@ -125,7 +125,7 @@ export interface Dictionary {
     items: { title: string; description: string }[];
   };
   faq: { eyebrow: string; heading: string; items: { q: string; a: string }[] };
-  about: { eyebrow: string; heading: string; role: string; body: string[]; photoAlt: string };
+  about: { eyebrow: string; people: { name: string; initials: string; photo: string; photoAlt: string; body: string[] }[] };
   contact: {
     eyebrow: string;
     heading: string;
@@ -491,14 +491,10 @@ export const dictionaries: Record<Locale, Dictionary> = {
     },
     about: {
       eyebrow: "O NÁS",
-      heading: "Jonáš Formánek",
-      role: "Zakladatel 4manek AI · student práv",
-      body: [
-        "Jonáš Formánek je zakladatel 4manek AI a student práv. S umělou inteligencí experimentuje od střední školy, kdy se stala dostupnou, a od začátku ji využívá k ulehčení práce.",
-        "Naplno se jí věnuje od studia ve Finsku. Nejdřív se zkoušela na vlastních procesech, potom v rodinné firmě, kde vznikla třeba automatizace dohledávání cen v B2B portálech.",
-        "Dnes tyto služby 4manek AI nabízí dalším firmám. Když něco nedává smysl, uslyšíte to dřív, než za to zaplatíte.",
+      people: [
+        { name: "Jonáš Formánek", initials: "JF", photo: "about/jonas.jpg", photoAlt: "Jonáš Formánek", body: ["(přidat text)"] },
+        { name: "Ing. Mikuláš Formánek", initials: "MF", photo: "about/mikulas.jpg", photoAlt: "Ing. Mikuláš Formánek", body: ["(přidat text)"] },
       ],
-      photoAlt: "Jonáš Formánek",
     },
     contact: {
       eyebrow: "KONTAKT",
@@ -914,14 +910,10 @@ export const dictionaries: Record<Locale, Dictionary> = {
     },
     about: {
       eyebrow: "ABOUT",
-      heading: "Jonáš Formánek",
-      role: "Founder of 4manek AI · law student",
-      body: [
-        "Jonáš Formánek is the founder of 4manek AI and a law student. Artificial intelligence has been a fascination since high school, when it became available, and Jonáš has always tried to use it to make work easier.",
-        "It became a serious focus during studies in Finland. It was tried first on internal processes, then in the family business, which is where the automated price lookup across B2B portals came from.",
-        "Today 4manek AI offers these services to other companies. If something doesn't make sense, you'll hear it before you pay for it.",
+      people: [
+        { name: "Jonáš Formánek", initials: "JF", photo: "about/jonas.jpg", photoAlt: "Jonáš Formánek", body: ["(add text)"] },
+        { name: "Ing. Mikuláš Formánek", initials: "MF", photo: "about/mikulas.jpg", photoAlt: "Ing. Mikuláš Formánek", body: ["(add text)"] },
       ],
-      photoAlt: "Jonáš Formánek",
     },
     contact: {
       eyebrow: "CONTACT",
